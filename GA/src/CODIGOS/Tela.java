@@ -5,7 +5,11 @@
  */
 package CODIGOS;
 
-import static CODIGOS.Arquivo.inf;
+import static CODIGOS.Arquivo.PSL2;
+import static CODIGOS.Arquivo.PSL3;
+import static CODIGOS.Arquivo.PSL4;
+import static CODIGOS.Arquivo.linhas;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.Calendar;
@@ -168,6 +172,8 @@ public class Tela extends javax.swing.JFrame {
         
         obterHoras();//OBTEM A HORA EM QUE O PROGRAMA É ABERTO
         BTN_ZERAR.setEnabled(false);
+        TEXTO_HORA.setForeground(Color.yellow);
+        TEXTO_TOTAL.setForeground(Color.yellow);
         
         timer = new Timer(1000, (ActionEvent e) -> {
             
@@ -188,7 +194,7 @@ public class Tela extends javax.swing.JFrame {
             Logger.getLogger(Tela.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        QDT = Integer.parseInt(inf[0]);
+        QDT = Integer.parseInt(linhas[0]);
        
         if(QDT == 3){
         
@@ -196,10 +202,14 @@ public class Tela extends javax.swing.JFrame {
         inicioVisibilidadeBotoes(false, true, true, true, false);
         
         /*DEFINE O NOME DOS TÉCNICOS*/
-        inicioNomeBotoes("", inf[1], inf[2], inf[3], "");
+        inicioNomeBotoes("", PSL2[0], PSL3[0], PSL4[0], "");
         
         /*DEFINE SE O BOTAO INICIARÁ HABILITADO*/
-        inicioBotoesHabilitados(false, false, false, false, false);//false, true, true, true, false
+        TEC_1_BTN.setEnabled(false);
+        TEC_2_BTN.setEnabled(false);
+        TEC_3_BTN.setEnabled(false);
+        TEC_4_BTN.setEnabled(false);
+        TEC_5_BTN.setEnabled(false);
         
         }else
         if(QDT == 5){
@@ -208,10 +218,14 @@ public class Tela extends javax.swing.JFrame {
         inicioVisibilidadeBotoes(true, true, true, true, true);
         
         /*DEFINE O NOME DOS TÉCNICOS*/
-        inicioNomeBotoes(inf[1], inf[2], inf[3], inf[4], inf[5]);
+        inicioNomeBotoes(linhas[1], linhas[2], linhas[3], linhas[4], linhas[5]);
         
         /*DEFINE SE O BOTAO INICIARÁ HABILITADO*/
-        inicioBotoesHabilitados(true, true, true, true, true);
+        TEC_1_BTN.setEnabled(false);
+        TEC_2_BTN.setEnabled(false);
+        TEC_3_BTN.setEnabled(false);
+        TEC_4_BTN.setEnabled(false);
+        TEC_5_BTN.setEnabled(false);
         
         }
         
@@ -238,9 +252,9 @@ public class Tela extends javax.swing.JFrame {
         
         ////////////////////////////////////////////////////////////////////////
         /*SE NENHUM BOTAO ESTIVER HABILITADO*/
-        /*if((QDT == 3 && !TEC_1_BTN.isEnabled() && !TEC_2_BTN.isEnabled() && !TEC_3_BTN.isEnabled() && !TEC_4_BTN.isEnabled() && !TEC_5_BTN.isEnabled())){
+        if((QDT == 3 && !TEC_1_BTN.isEnabled() && !TEC_2_BTN.isEnabled() && !TEC_3_BTN.isEnabled() && !TEC_4_BTN.isEnabled() && !TEC_5_BTN.isEnabled())){
             JOptionPane.showMessageDialog(null,"Todos os técnicos estão fora do horário de atendimento.","Aviso",JOptionPane.WARNING_MESSAGE);
-        }*/
+        }
         
         TEXTO_TOTAL.setText("Atendimentos : "+v);
         
