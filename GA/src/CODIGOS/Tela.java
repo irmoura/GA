@@ -494,6 +494,7 @@ public class Tela extends javax.swing.JFrame {
             }
             else
             {
+                if(QDT == 5){
                 v = 0;
                 TDA = 0;
                 AT1 = 0;
@@ -509,6 +510,7 @@ public class Tela extends javax.swing.JFrame {
                 TEC_4_BTN.setText(""+PSL5[0]);
                 TEC_5_BTN.setText(""+PSL6[0]);
                 BOTAO_ZERAR.setEnabled(false);
+                }
             }
         }
         
