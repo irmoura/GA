@@ -518,7 +518,8 @@ public class Tela extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         if(QDT == 5){
-            BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
+            
+        BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
         
         v++;//A cada clique incrementa +1
 
@@ -527,6 +528,12 @@ public class Tela extends javax.swing.JFrame {
         if((TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() && TEC_5_BTN.isSelected()) || 
           (!TEC_1_BTN.isEnabled() && !TEC_2_BTN.isEnabled() && !TEC_3_BTN.isEnabled() && !TEC_4_BTN.isEnabled() && !TEC_5_BTN.isEnabled())){
             JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 5° TÉCNICO ESTIVER HABILITADO*/
+        if((TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() && !TEC_5_BTN.isSelected()) || 
+          (!TEC_1_BTN.isEnabled() && !TEC_2_BTN.isEnabled() && !TEC_3_BTN.isEnabled() && !TEC_4_BTN.isEnabled() && TEC_5_BTN.isEnabled())){
+            v = 5;
         }
         if(v == 1 && (TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() && !TEC_5_BTN.isSelected()) || 
           (!TEC_1_BTN.isEnabled() && !TEC_2_BTN.isEnabled() && !TEC_3_BTN.isEnabled() && !TEC_4_BTN.isEnabled() && TEC_5_BTN.isEnabled())){
