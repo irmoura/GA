@@ -233,13 +233,8 @@ public class Tela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        // TODO add your handling code here:
         
-        try {
-            Arquivo.ler();
-        } catch (IOException ex) {
-            Logger.getLogger(Tela.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Arquivo.ler("CONFIG5");
         
         QDT = Integer.parseInt(PSL1[0]);
         

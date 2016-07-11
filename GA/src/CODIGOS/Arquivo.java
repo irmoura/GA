@@ -34,16 +34,20 @@ public class Arquivo {
     
     public static int qtdLinha;
     
-    public static void ler() throws IOException{
+    public static void ler(String arquivo){
       try {
             File dir = new File("C:\\GA");
-            File arq = new File(dir,"CONFIG5.txt");
+            File arq = new File(dir,arquivo+".txt");
             FileReader fileReader = new FileReader(arq);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             
             /*CONTA A QUANTIDADE DE LINHAS DO ARQUIVO TXT*/
             LineNumberReader linhaLeitura = new LineNumberReader(new FileReader(arq));
+          try {
               linhaLeitura.skip(arq.length());
+          } catch (IOException ex) {
+              Logger.getLogger(Arquivo.class.getName()).log(Level.SEVERE, null, ex);
+          }
               qtdLinha = linhaLeitura.getLineNumber();
               linhas = new String[(qtdLinha+1)];
             ////////////////////////////////////////////////////////////////////
