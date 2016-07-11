@@ -5,10 +5,12 @@
  */
 package CODIGOS;
 
+import static CODIGOS.Arquivo.PSL1;
 import static CODIGOS.Arquivo.PSL2;
 import static CODIGOS.Arquivo.PSL3;
 import static CODIGOS.Arquivo.PSL4;
-import static CODIGOS.Arquivo.linhas;
+import static CODIGOS.Arquivo.PSL5;
+import static CODIGOS.Arquivo.PSL6;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
@@ -33,6 +35,41 @@ public class Tela extends javax.swing.JFrame {
     public int AT5;//Atendimentos Técnico 5
     public int contador;
     public int QDT;
+    
+    public int HCT1;
+    public int MCT1;
+    public int HST1;
+    public int MST1;
+    public String ET1;
+    public String ST1;
+    
+    public int HCT2;
+    public int MCT2;
+    public int HST2;
+    public int MST2;
+    public String ET2;
+    public String ST2;
+    
+    public int HCT3;
+    public int MCT3;
+    public int HST3;
+    public int MST3;
+    public String ET3;
+    public String ST3;
+    
+    public int HCT4;
+    public int MCT4;
+    public int HST4;
+    public int MST4;
+    public String ET4;
+    public String ST4;
+    
+    public int HCT5;
+    public int MCT5;
+    public int HST5;
+    public int MST5;
+    public String ET5;
+    public String ST5;
     
     public int hora, minuto, segundo;
     public String horas;
@@ -170,6 +207,49 @@ public class Tela extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         
+        try {
+            Arquivo.ler();
+        } catch (IOException ex) {
+            Logger.getLogger(Tela.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        QDT = Integer.parseInt(PSL1[0]);
+        
+        HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
+        MCT1 = Integer.parseInt(PSL2[3]);//Minuto chegada Técnico 1
+        HST1 = Integer.parseInt(PSL2[4]);//Hora Saida Técnico 1
+        MST1 = Integer.parseInt(PSL2[5]);//Minuto Saida Técnico 1
+        ET1 = PSL2[6];//Entrada Técnico 1
+        ST1 = PSL2[7];//Saida Técnico 1
+        
+        HCT2 = Integer.parseInt(PSL3[2]);//Hora Chegada Técnico 2
+        MCT2 = Integer.parseInt(PSL3[3]);//Minuto Chegada Técnico 2
+        HST2 = Integer.parseInt(PSL3[4]);//Hora Saida Técnico 2
+        MST2 = Integer.parseInt(PSL3[5]);//Minuto Saida Técnico 2
+        ET2 = PSL3[6];//Entrada Técnico 2
+        ST2 = PSL3[7];//Saida Técnico 2
+        
+        HCT3 = Integer.parseInt(PSL4[2]);//Hora Chegada Técnico 3
+        MCT3 = Integer.parseInt(PSL4[3]);//Minuto Chegada Técnico 3
+        HST3 = Integer.parseInt(PSL4[4]);//Hora Saida Técnico 3
+        MST3 = Integer.parseInt(PSL4[5]);//Minuto Saida Técnico 3
+        ET3 = PSL4[6];//Entrada Técnico 3
+        ST3 = PSL4[7];//Saida Técnico 3
+        
+        HCT4 = Integer.parseInt(PSL5[2]);//Hora Chegada Técnico 4
+        MCT4 = Integer.parseInt(PSL5[3]);//Minuto Chegada Técnico 4
+        HST4 = Integer.parseInt(PSL5[4]);//Hora Saida Técnico 4
+        MST4 = Integer.parseInt(PSL5[5]);//Minuto Saida Técnico 4
+        ET4 = PSL5[6];//Entrada Técnico 4
+        ST4 = PSL5[7];//Saida Técnico 4
+        
+        HCT5 = Integer.parseInt(PSL6[2]);//Hora Chegada Técnico 5
+        MCT5 = Integer.parseInt(PSL6[3]);//Minuto Chegada Técnico 5
+        HST5 = Integer.parseInt(PSL6[4]);//Hora Saida Técnico 5
+        MST5 = Integer.parseInt(PSL6[5]);//Minuto Saida Técnico 5
+        ET5 = PSL6[6];//Entrada Técnico 5
+        ST5 = PSL6[7];//Saida Técnico 5
+        
         obterHoras();//OBTEM A HORA EM QUE O PROGRAMA É ABERTO
         BTN_ZERAR.setEnabled(false);
         TEXTO_HORA.setForeground(Color.yellow);
@@ -184,17 +264,37 @@ public class Tela extends javax.swing.JFrame {
             TEXTO_HORA.setText(horas);
             
             ////////////////////////////////////////////////////////////////////
+            /*TÉCNICOS HABILITADOS NA HORA E MINUTO DEFINIDOS*/
+            if(horas.equals(ET1)){
+                TEC_1_BTN.setEnabled(true);
+                TEC_1_BTN.setSelected(false);
+                TEC_1_BTN.setBackground(Color.green);
+            }
+            if(horas.equals(ET2)){
+                TEC_2_BTN.setEnabled(true);
+                TEC_2_BTN.setSelected(false);
+                TEC_2_BTN.setBackground(Color.green);
+            }
+            if(horas.equals(ET3)){
+                TEC_3_BTN.setEnabled(true);
+                TEC_3_BTN.setSelected(false);
+                TEC_3_BTN.setBackground(Color.green);
+            }
+            if(horas.equals(ET4)){
+                TEC_4_BTN.setEnabled(true);
+                TEC_4_BTN.setSelected(false);
+                TEC_4_BTN.setBackground(Color.green);
+            }
+            if(horas.equals(ET5)){
+                TEC_5_BTN.setEnabled(true);
+                TEC_5_BTN.setSelected(false);
+                TEC_5_BTN.setBackground(Color.green);
+            }
+            
+            ////////////////////////////////////////////////////////////////////
         });
         
         timer.start();
-        
-        try {
-            Arquivo.ler();
-        } catch (IOException ex) {
-            Logger.getLogger(Tela.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        QDT = Integer.parseInt(linhas[0]);
        
         if(QDT == 3){
         
@@ -206,10 +306,28 @@ public class Tela extends javax.swing.JFrame {
         
         /*DEFINE SE O BOTAO INICIARÁ HABILITADO*/
         TEC_1_BTN.setEnabled(false);
-        TEC_2_BTN.setEnabled(false);
-        TEC_3_BTN.setEnabled(false);
-        TEC_4_BTN.setEnabled(false);
+        TEC_2_BTN.setEnabled(true);
+        TEC_3_BTN.setEnabled(true);
+        TEC_4_BTN.setEnabled(true);
         TEC_5_BTN.setEnabled(false);
+        
+         ////////////////////////////////////////////////////////////////////////
+        /*DEPOIS DO HORARIO DE CHEGADA O BOTAO INICIA HABILITADO*/
+        if((hora >= HCT1 && minuto >= MCT1) ||
+           (hora > HCT1)){
+            TEC_2_BTN.setSelected(false);
+            TEC_2_BTN.setBackground(Color.green);
+        }
+        if((hora >= HCT2 && minuto >= MCT2) ||
+           (hora > HCT2)){
+            TEC_3_BTN.setSelected(false);
+            TEC_3_BTN.setBackground(Color.green);
+        }
+        if((hora >= HCT3 && minuto >= MCT3) ||
+           (hora > HCT3)){
+            TEC_4_BTN.setSelected(false);
+            TEC_4_BTN.setBackground(Color.green);
+        }
         
         }else
         if(QDT == 5){
@@ -218,14 +336,42 @@ public class Tela extends javax.swing.JFrame {
         inicioVisibilidadeBotoes(true, true, true, true, true);
         
         /*DEFINE O NOME DOS TÉCNICOS*/
-        inicioNomeBotoes(linhas[1], linhas[2], linhas[3], linhas[4], linhas[5]);
+        inicioNomeBotoes(PSL2[0], PSL3[0], PSL4[0], PSL5[0], PSL6[0]);
         
         /*DEFINE SE O BOTAO INICIARÁ HABILITADO*/
-        TEC_1_BTN.setEnabled(false);
-        TEC_2_BTN.setEnabled(false);
-        TEC_3_BTN.setEnabled(false);
-        TEC_4_BTN.setEnabled(false);
-        TEC_5_BTN.setEnabled(false);
+        TEC_1_BTN.setEnabled(true);
+        TEC_2_BTN.setEnabled(true);
+        TEC_3_BTN.setEnabled(true);
+        TEC_4_BTN.setEnabled(true);
+        TEC_5_BTN.setEnabled(true);
+        
+         ////////////////////////////////////////////////////////////////////////
+        /*DEPOIS DO HORARIO DE CHEGADA O BOTAO INICIA HABILITADO*/
+        if((hora >= HCT1 && minuto >= MCT1) ||
+           (hora > HCT1)){
+            TEC_1_BTN.setSelected(false);
+            TEC_1_BTN.setBackground(Color.green);
+        }
+        if((hora >= HCT2 && minuto >= MCT2) ||
+           (hora > HCT2)){
+            TEC_2_BTN.setSelected(false);
+            TEC_2_BTN.setBackground(Color.green);
+        }
+        if((hora >= HCT3 && minuto >= MCT3) ||
+           (hora > HCT3)){
+            TEC_3_BTN.setSelected(false);
+            TEC_3_BTN.setBackground(Color.green);
+        }
+        if((hora >= HCT4 && minuto >= MCT4) ||
+           (hora > HCT4)){
+            TEC_4_BTN.setSelected(false);
+            TEC_4_BTN.setBackground(Color.green);
+        }
+        if((hora >= HCT5 && minuto >= MCT5) ||
+           (hora > HCT5)){
+            TEC_5_BTN.setSelected(false);
+            TEC_5_BTN.setBackground(Color.green);
+        }
         
         }
         

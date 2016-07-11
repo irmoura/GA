@@ -23,10 +23,12 @@ public class Arquivo {
     
     public static String linha;
     public static String[] linhas;
+    public static String[] PSL1;//Palavras separadas linha 1
     public static String[] PSL2;//Palavras separadas linha 2
-    public static String[] PSL3;//Palavras separadas linha 2
-    public static String[] PSL4;//Palavras separadas linha 2
-    public static String[] PSL5;//Palavras separadas linha 2
+    public static String[] PSL3;//Palavras separadas linha 3
+    public static String[] PSL4;//Palavras separadas linha 4
+    public static String[] PSL5;//Palavras separadas linha 5
+    public static String[] PSL6;//Palavras separadas linha 6
     
     public static FileWriter informacoes;
     
@@ -35,7 +37,7 @@ public class Arquivo {
     public static void ler() throws IOException{
       try {
             File dir = new File("C:\\GA");
-            File arq = new File(dir,"CONFIG3.txt");
+            File arq = new File(dir,"CONFIG5.txt");
             FileReader fileReader = new FileReader(arq);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             
@@ -59,6 +61,18 @@ public class Arquivo {
             Logger.getLogger(Arquivo.class.getName()).log(Level.SEVERE, null, ex);
         }
       
+      /////////////////
+        for(int i = 0; i < (qtdLinha+1); i++){
+                linha = linhas[0];
+                linha = linha.replace(" ",";");
+                String[] s = linha.split(";");
+            
+                PSL1 = new String[s.length];
+        
+                for(int j = 0; j < s.length; j++){
+                    PSL1[j] = s[j];
+                }
+        }
       /////////////////
         for(int i = 0; i < (qtdLinha+1); i++){
                 linha = linhas[1];
@@ -96,6 +110,29 @@ public class Arquivo {
                 }
         }
         /////////////////
+        for(int i = 0; i < (qtdLinha+1); i++){
+                linha = linhas[4];
+                linha = linha.replace(" ",";");
+                String[] s = linha.split(";");
+            
+                PSL5 = new String[s.length];
+        
+                for(int j = 0; j < s.length; j++){
+                    PSL5[j] = s[j];
+                }
+        }
+        /////////////////
+        for(int i = 0; i < (qtdLinha+1); i++){
+                linha = linhas[5];
+                linha = linha.replace(" ",";");
+                String[] s = linha.split(";");
+            
+                PSL6 = new String[s.length];
+        
+                for(int j = 0; j < s.length; j++){
+                    PSL6[j] = s[j];
+                }
+        }
       
     }
 }
