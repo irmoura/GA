@@ -75,6 +75,8 @@ public class Tela extends javax.swing.JFrame {
     public String horas;
     public Calendar now;
     public Timer timer;
+    
+    public Password password;
    
     /**
      * Creates new form Tela
@@ -130,8 +132,8 @@ public class Tela extends javax.swing.JFrame {
         TEC_3_BTN = new javax.swing.JToggleButton();
         TEC_4_BTN = new javax.swing.JToggleButton();
         TEC_5_BTN = new javax.swing.JToggleButton();
-        TEXTO_DA_VEZ = new javax.swing.JLabel();
-        BTN_ZERAR = new javax.swing.JButton();
+        TEXTO_NOME_DA_VEZ = new javax.swing.JLabel();
+        BOTAO_ZERAR = new javax.swing.JButton();
         TEXTO_TOTAL = new javax.swing.JLabel();
         TEXTO_HORA = new javax.swing.JLabel();
         TEXTO_DESENVOLVEDOR = new javax.swing.JLabel();
@@ -154,30 +156,56 @@ public class Tela extends javax.swing.JFrame {
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TEC_1_BTN.setText("Técnico 1");
+        TEC_1_BTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TEC_1_BTNMouseClicked(evt);
+            }
+        });
         jDesktopPane1.add(TEC_1_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 370, -1, -1));
 
         TEC_2_BTN.setText("Técnico 2");
+        TEC_2_BTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TEC_2_BTNMouseClicked(evt);
+            }
+        });
         jDesktopPane1.add(TEC_2_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 370, -1, -1));
 
         TEC_3_BTN.setText("Técnico 3");
+        TEC_3_BTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TEC_3_BTNMouseClicked(evt);
+            }
+        });
         jDesktopPane1.add(TEC_3_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(313, 370, -1, -1));
 
         TEC_4_BTN.setText("Técnico 4");
+        TEC_4_BTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TEC_4_BTNMouseClicked(evt);
+            }
+        });
         jDesktopPane1.add(TEC_4_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 370, -1, -1));
 
         TEC_5_BTN.setText("Técnico 5");
-        jDesktopPane1.add(TEC_5_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 370, -1, -1));
-
-        TEXTO_DA_VEZ.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jDesktopPane1.add(TEXTO_DA_VEZ, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 680, 90));
-
-        BTN_ZERAR.setText("ZERAR");
-        BTN_ZERAR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BTN_ZERARActionPerformed(evt);
+        TEC_5_BTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TEC_5_BTNMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(BTN_ZERAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
+        jDesktopPane1.add(TEC_5_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 370, -1, -1));
+
+        TEXTO_NOME_DA_VEZ.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        TEXTO_NOME_DA_VEZ.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jDesktopPane1.add(TEXTO_NOME_DA_VEZ, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 680, 90));
+
+        BOTAO_ZERAR.setText("ZERAR");
+        BOTAO_ZERAR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BOTAO_ZERARActionPerformed(evt);
+            }
+        });
+        jDesktopPane1.add(BOTAO_ZERAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
 
         TEXTO_TOTAL.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TEXTO_TOTAL.setText("Atendimentos : ");
@@ -275,7 +303,7 @@ public class Tela extends javax.swing.JFrame {
         }
         
         obterHoras();//OBTEM A HORA EM QUE O PROGRAMA É ABERTO
-        BTN_ZERAR.setEnabled(false);
+        BOTAO_ZERAR.setEnabled(false);
         TEXTO_HORA.setForeground(Color.yellow);
         TEXTO_TOTAL.setForeground(Color.yellow);
         
@@ -396,6 +424,37 @@ public class Tela extends javax.swing.JFrame {
             TEC_5_BTN.setSelected(false);
             TEC_5_BTN.setBackground(Color.green);
         }
+        /*ANTES DO HORARIO O BOTAO INICIA DESABILITADO*/
+        if((hora <= HCT1 && minuto < MCT1)){
+            TEC_1_BTN.setEnabled(false);
+            TEC_1_BTN.setSelected(true);
+            TEC_1_BTN.setBackground(Color.red);
+            TEC_1_BTN.setText(""+PSL2[0]);
+        }
+        if((hora <= HCT2 && minuto < MCT2)){
+            TEC_2_BTN.setEnabled(false);
+            TEC_2_BTN.setSelected(true);
+            TEC_2_BTN.setBackground(Color.red);
+            TEC_2_BTN.setText(""+PSL3[0]);
+        }
+        if((hora <= HCT3 && minuto < MCT3)){
+            TEC_3_BTN.setEnabled(false);
+            TEC_3_BTN.setSelected(true);
+            TEC_3_BTN.setBackground(Color.red);
+            TEC_3_BTN.setText(""+PSL4[0]);
+        }
+        if((hora <= HCT4 && minuto < MCT4)){
+            TEC_4_BTN.setEnabled(false);
+            TEC_4_BTN.setSelected(true);
+            TEC_4_BTN.setBackground(Color.red);
+            TEC_4_BTN.setText(""+PSL5[0]);
+        }
+        if((hora <= HCT5 && minuto < MCT5)){
+            TEC_5_BTN.setEnabled(false);
+            TEC_5_BTN.setSelected(true);
+            TEC_5_BTN.setBackground(Color.red);
+            TEC_5_BTN.setText(""+PSL6[0]);
+        }
         
         }
         
@@ -406,29 +465,240 @@ public class Tela extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formMouseClicked
 
-    private void BTN_ZERARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ZERARActionPerformed
+    private void BOTAO_ZERARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_ZERARActionPerformed
         // TODO add your handling code here:
         
+        Object[] options = { "Sim", "Não" };   
+        int opcao = JOptionPane.showOptionDialog(null,"Deseja zerar a contagem ?","Aviso",
+        JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);   
+  
+        if (opcao != 0){
+        //JOptionPane.showMessageDialog(null,"");
+        }else{
+              
+            String senha = "";
+            int tentativas = 3;//Define o número de tentativas que o usuário terá para acertar a senha.
+            
+            for(int i=0;i<tentativas;i++)
+            {
+                if(!senha.equals(password.senha))      
+                {
+                    
+                    senha = JOptionPane.showInputDialog(null,"Password: ","Warning "+(i+1)+"ª tentativa.",JOptionPane.OK_CANCEL_OPTION);
+                    
+                }    
+            }
+            if (!senha.equals(password.senha) || senha.equals(null))    
+            {
+                JOptionPane.showMessageDialog(null,"Senha incorreta ou operação cancelada","Aviso",JOptionPane.WARNING_MESSAGE);
+            }
+            else
+            {
+                v = 0;
+                TDA = 0;
+                AT1 = 0;
+                AT2 = 0;
+                AT3 = 0;
+                AT4 = 0;
+                AT5 = 0;
+                TEXTO_TOTAL.setText("ATENDIMENTOS : ");
+                TEXTO_NOME_DA_VEZ.setText("");
+                TEC_1_BTN.setText(""+PSL2[0]);
+                TEC_2_BTN.setText(""+PSL3[0]);
+                TEC_3_BTN.setText(""+PSL4[0]);
+                TEC_4_BTN.setText(""+PSL5[0]);
+                TEC_5_BTN.setText(""+PSL6[0]);
+                BOTAO_ZERAR.setEnabled(false);
+            }
+        }
         
-        
-    }//GEN-LAST:event_BTN_ZERARActionPerformed
+    }//GEN-LAST:event_BOTAO_ZERARActionPerformed
 
     private void PAPEL_DE_PAREDEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PAPEL_DE_PAREDEMouseClicked
         // TODO add your handling code here:
         
-        BTN_ZERAR.setEnabled(true);
+        if(QDT == 5){
+            BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
         
         v++;//A cada clique incrementa +1
-        
+
         ////////////////////////////////////////////////////////////////////////
         /*SE NENHUM BOTAO ESTIVER HABILITADO*/
-        if((QDT == 3 && !TEC_1_BTN.isEnabled() && !TEC_2_BTN.isEnabled() && !TEC_3_BTN.isEnabled() && !TEC_4_BTN.isEnabled() && !TEC_5_BTN.isEnabled())){
-            JOptionPane.showMessageDialog(null,"Todos os técnicos estão fora do horário de atendimento.","Aviso",JOptionPane.WARNING_MESSAGE);
+        if((TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() && TEC_5_BTN.isSelected()) || 
+          (!TEC_1_BTN.isEnabled() && !TEC_2_BTN.isEnabled() && !TEC_3_BTN.isEnabled() && !TEC_4_BTN.isEnabled() && !TEC_5_BTN.isEnabled())){
+            JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
+        }
+        if(v == 1 && (TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() && !TEC_5_BTN.isSelected()) || 
+          (!TEC_1_BTN.isEnabled() && !TEC_2_BTN.isEnabled() && !TEC_3_BTN.isEnabled() && !TEC_4_BTN.isEnabled() && TEC_5_BTN.isEnabled())){
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL2[0]+" - "+PSL2[1]);
+            AT5++;
+            TEC_5_BTN.setText(PSL2[0]+" - "+AT5);
+            TDA++;
+            
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 2º O 3º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
+        if(v == 5 && !TEC_2_BTN.isSelected() && !TEC_3_BTN.isSelected() && TEC_1_BTN.isSelected() && !TEC_4_BTN.isSelected() && TEC_5_BTN.isSelected()){
+            v = v - 4;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 3º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
+        if(v == 5 && TEC_2_BTN.isSelected() && !TEC_3_BTN.isSelected() && TEC_1_BTN.isSelected() && !TEC_4_BTN.isSelected() && TEC_5_BTN.isSelected()){
+            v = v - 3;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 2º E O 3º TÉCNICO ESTIVEREM HABILITADOS*/
+        if(v == 4 && !TEC_2_BTN.isSelected() && !TEC_3_BTN.isSelected() && TEC_1_BTN.isSelected() && TEC_4_BTN.isSelected() && TEC_5_BTN.isSelected()){
+            v = v - 2;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*NA VEZ DO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
+        if(v == 1 && TEC_1_BTN.isSelected() || v == 1 && !TEC_1_BTN.isEnabled()){
+            v++;
+        }
+        if(v == 2 && TEC_2_BTN.isSelected() || v == 2 && !TEC_2_BTN.isEnabled()){
+            v++;
+        }
+        if(v == 3 && TEC_3_BTN.isSelected() || v == 3 && !TEC_3_BTN.isEnabled()){
+            v++;
+        }
+        if(v == 4 && TEC_4_BTN.isSelected() || v == 4 && !TEC_4_BTN.isEnabled()){
+            v++;
+        }
+        if(v == 5 && TEC_5_BTN.isSelected() || v == 5 && !TEC_3_BTN.isEnabled()){
+            v=1;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 2º TÉCNICO ESTIVER HABILITADO*/
+        if(TEC_1_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() && TEC_5_BTN.isSelected()){
+            v=2;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 3º TÉCNICO ESTIVER HABILITADO*/
+        if(TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_4_BTN.isSelected() && TEC_5_BTN.isSelected()){
+            v=3;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 4º TÉCNICO ESTIVER HABILITADO*/
+        if(TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_5_BTN.isSelected()){
+            v=4;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*NA VEZ DO TÉCNICO E O MESMO ESTIVER HABILITADO*/
+        if(v == 1 && !TEC_1_BTN.isSelected()){
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL2[0]+" - "+PSL2[1]);
+            AT1++;
+            TEC_1_BTN.setText(PSL2[0]+" - "+AT1);
+            TDA++;
+            
+        }
+        if(v == 2 && !TEC_2_BTN.isSelected()){
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL3[0]+" - "+PSL3[1]);
+            AT2++;
+            TEC_2_BTN.setText(PSL3[0]+" - "+AT2);
+            TDA++;
+            
+        }
+        if(v == 3 && !TEC_3_BTN.isSelected()){ 
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL4[0]+" - "+PSL4[1]);
+            AT3++;
+            TEC_3_BTN.setText(PSL4[0]+" - "+AT3);
+            TDA++;
+            
+        }
+        if(v == 4 && !TEC_4_BTN.isSelected()){ 
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL5[0]+" - "+PSL5[1]);
+            AT4++;
+            TEC_4_BTN.setText(PSL5[0]+" - "+AT4);
+            TDA++;
+            
+        }
+        if(v == 5 && !TEC_5_BTN.isSelected()){ 
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL6[0]+" - "+PSL6[1]);
+            AT5++;
+            TEC_5_BTN.setText(PSL6[0]+" - "+AT5);
+            TDA++;
+            
+            v = 0;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*NA VEZ DO ÚLTIMO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
+        if(v == 5 && TEC_5_BTN.isSelected() || v == 5 && !TEC_5_BTN.isEnabled()){
+            v = 0;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        TEXTO_TOTAL.setText("Atendimentos : "+TDA);
+        
+        /*Codigos.Arquivo.gravar("Total de atendimentos: "+TDA,
+                               PSL2[0]+" = "+AT1,
+                               PSL3[0]+" = "+AT2,
+                               PSL4[0]+" = "+AT3,
+                               PSL5[0]+" = "+AT4,
+                               PSL6[0]+" = "+AT5);*/
         }
         
-        TEXTO_TOTAL.setText("Atendimentos : "+v);
-        
     }//GEN-LAST:event_PAPEL_DE_PAREDEMouseClicked
+
+    private void TEC_1_BTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TEC_1_BTNMouseClicked
+        // TODO add your handling code here:
+        if(TEC_1_BTN.isSelected()){
+            TEC_1_BTN.setSelected(true);
+            TEC_1_BTN.setBackground(Color.red);
+        }else{
+            TEC_1_BTN.setSelected(false);
+            TEC_1_BTN.setBackground(Color.green);
+        }
+    }//GEN-LAST:event_TEC_1_BTNMouseClicked
+
+    private void TEC_2_BTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TEC_2_BTNMouseClicked
+        // TODO add your handling code here:
+        if(TEC_2_BTN.isSelected()){
+            TEC_2_BTN.setSelected(true);
+            TEC_2_BTN.setBackground(Color.red);
+        }else{
+            TEC_2_BTN.setSelected(false);
+            TEC_2_BTN.setBackground(Color.green);
+        }
+    }//GEN-LAST:event_TEC_2_BTNMouseClicked
+
+    private void TEC_3_BTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TEC_3_BTNMouseClicked
+        // TODO add your handling code here:
+         if(TEC_3_BTN.isSelected()){
+            TEC_3_BTN.setSelected(true);
+            TEC_3_BTN.setBackground(Color.red);
+        }else{
+            TEC_3_BTN.setSelected(false);
+            TEC_3_BTN.setBackground(Color.green);
+        }
+    }//GEN-LAST:event_TEC_3_BTNMouseClicked
+
+    private void TEC_4_BTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TEC_4_BTNMouseClicked
+        // TODO add your handling code here:
+        if(TEC_4_BTN.isSelected()){
+            TEC_4_BTN.setSelected(true);
+            TEC_4_BTN.setBackground(Color.red);
+        }else{
+            TEC_4_BTN.setSelected(false);
+            TEC_4_BTN.setBackground(Color.green);
+        }
+    }//GEN-LAST:event_TEC_4_BTNMouseClicked
+
+    private void TEC_5_BTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TEC_5_BTNMouseClicked
+        // TODO add your handling code here:
+         if(TEC_5_BTN.isSelected()){
+            TEC_5_BTN.setSelected(true);
+            TEC_5_BTN.setBackground(Color.red);
+        }else{
+            TEC_5_BTN.setSelected(false);
+            TEC_5_BTN.setBackground(Color.green);
+        }
+    }//GEN-LAST:event_TEC_5_BTNMouseClicked
 
     /**
      * @param args the command line arguments
@@ -467,16 +737,16 @@ public class Tela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BTN_ZERAR;
+    private javax.swing.JButton BOTAO_ZERAR;
     private javax.swing.JLabel PAPEL_DE_PAREDE;
     private javax.swing.JToggleButton TEC_1_BTN;
     private javax.swing.JToggleButton TEC_2_BTN;
     private javax.swing.JToggleButton TEC_3_BTN;
     private javax.swing.JToggleButton TEC_4_BTN;
     private javax.swing.JToggleButton TEC_5_BTN;
-    private javax.swing.JLabel TEXTO_DA_VEZ;
     private javax.swing.JLabel TEXTO_DESENVOLVEDOR;
     private javax.swing.JLabel TEXTO_HORA;
+    private javax.swing.JLabel TEXTO_NOME_DA_VEZ;
     private javax.swing.JLabel TEXTO_TOTAL;
     private javax.swing.JDesktopPane jDesktopPane1;
     // End of variables declaration//GEN-END:variables
