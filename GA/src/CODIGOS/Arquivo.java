@@ -110,7 +110,9 @@ public class Arquivo {
                 }
         }
         /////////////////
-        for(int i = 0; i < (qtdLinha+1); i++){
+        /*CASO USAR PARA 5 TECNICOS*/
+        if(linhas.length == 7){
+            for(int i = 0; i < (qtdLinha+1); i++){
                 linha = linhas[4];
                 linha = linha.replace(" ",";");
                 String[] s = linha.split(";");
@@ -133,6 +135,8 @@ public class Arquivo {
                     PSL6[j] = s[j];
                 }
         }
+        }
+        
       
     }
 }

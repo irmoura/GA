@@ -215,7 +215,30 @@ public class Tela extends javax.swing.JFrame {
         
         QDT = Integer.parseInt(PSL1[0]);
         
-        HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
+        if(QDT == 3){
+            HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
+        MCT1 = Integer.parseInt(PSL2[3]);//Minuto chegada Técnico 1
+        HST1 = Integer.parseInt(PSL2[4]);//Hora Saida Técnico 1
+        MST1 = Integer.parseInt(PSL2[5]);//Minuto Saida Técnico 1
+        ET1 = PSL2[6];//Entrada Técnico 1
+        ST1 = PSL2[7];//Saida Técnico 1
+        
+        HCT2 = Integer.parseInt(PSL3[2]);//Hora Chegada Técnico 2
+        MCT2 = Integer.parseInt(PSL3[3]);//Minuto Chegada Técnico 2
+        HST2 = Integer.parseInt(PSL3[4]);//Hora Saida Técnico 2
+        MST2 = Integer.parseInt(PSL3[5]);//Minuto Saida Técnico 2
+        ET2 = PSL3[6];//Entrada Técnico 2
+        ST2 = PSL3[7];//Saida Técnico 2
+        
+        HCT3 = Integer.parseInt(PSL4[2]);//Hora Chegada Técnico 3
+        MCT3 = Integer.parseInt(PSL4[3]);//Minuto Chegada Técnico 3
+        HST3 = Integer.parseInt(PSL4[4]);//Hora Saida Técnico 3
+        MST3 = Integer.parseInt(PSL4[5]);//Minuto Saida Técnico 3
+        ET3 = PSL4[6];//Entrada Técnico 3
+        ST3 = PSL4[7];//Saida Técnico 3
+        }
+        if(QDT == 5){
+                HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
         MCT1 = Integer.parseInt(PSL2[3]);//Minuto chegada Técnico 1
         HST1 = Integer.parseInt(PSL2[4]);//Hora Saida Técnico 1
         MST1 = Integer.parseInt(PSL2[5]);//Minuto Saida Técnico 1
@@ -249,6 +272,7 @@ public class Tela extends javax.swing.JFrame {
         MST5 = Integer.parseInt(PSL6[5]);//Minuto Saida Técnico 5
         ET5 = PSL6[6];//Entrada Técnico 5
         ST5 = PSL6[7];//Saida Técnico 5
+        }
         
         obterHoras();//OBTEM A HORA EM QUE O PROGRAMA É ABERTO
         BTN_ZERAR.setEnabled(false);
