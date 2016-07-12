@@ -453,7 +453,7 @@ public class Tela extends javax.swing.JFrame {
             TEC_5_BTN.setBackground(Color.green);
         }
         /*ANTES DO HORARIO O BOTAO INICIA DESABILITADO*/
-        if((hora <= HCT1 && minuto < MCT1)){
+        if((hora < HCT1)){
             TEC_1_BTN.setEnabled(false);
             TEC_1_BTN.setSelected(true);
             TEC_1_BTN.setForeground(Color.red);
