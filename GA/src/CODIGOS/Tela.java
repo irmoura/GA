@@ -13,10 +13,7 @@ import static CODIGOS.Arquivo.PSL5;
 import static CODIGOS.Arquivo.PSL6;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
-import java.io.IOException;
 import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
@@ -99,14 +96,6 @@ public class Tela extends javax.swing.JFrame {
         TEC_3_BTN.setText(N3);
         TEC_4_BTN.setText(N4);
         TEC_5_BTN.setText(N5);
-    }
-    
-    public void inicioBotoesHabilitados(Boolean t1, Boolean t2, Boolean t3, Boolean t4, Boolean t5){
-        TEC_1_BTN.setEnabled(t1);
-        TEC_2_BTN.setEnabled(t1);
-        TEC_3_BTN.setEnabled(t1);
-        TEC_4_BTN.setEnabled(t1);
-        TEC_5_BTN.setEnabled(t1);
     }
     
     public void obterHoras(){
@@ -555,6 +544,11 @@ public class Tela extends javax.swing.JFrame {
         /*SE APENAS O 2º E O 3º TÉCNICO ESTIVEREM HABILITADOS*/
         if(v == 4 && !TEC_2_BTN.isSelected() && !TEC_3_BTN.isSelected() && TEC_1_BTN.isSelected() && TEC_4_BTN.isSelected() && TEC_5_BTN.isSelected()){
             v = v - 2;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 2º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
+        if(v == 5 && !TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_1_BTN.isSelected() && !TEC_4_BTN.isSelected() && TEC_5_BTN.isSelected()){
+            v = v - 3;
         }
         ////////////////////////////////////////////////////////////////////////
         /*NA VEZ DO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
