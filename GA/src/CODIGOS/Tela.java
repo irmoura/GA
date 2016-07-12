@@ -658,7 +658,7 @@ public class Tela extends javax.swing.JFrame {
         BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
         
         v++;//A cada clique incrementa +1
-            
+        
         ////////////////////////////////////////////////////////////////////////
         /*SE NENHUM BOTAO ESTIVER HABILITADO*/
         if(TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() || 
@@ -682,8 +682,8 @@ public class Tela extends javax.swing.JFrame {
         }
         ////////////////////////////////////////////////////////////////////////
         /*SE APENAS O 2º BOTAO ESTIVER HABILITADO*/
-        if(TEC_3_BTN.isSelected() && TEC_3_BTN.isSelected()){
-            v=2;
+        if(TEC_2_BTN.isSelected() && TEC_4_BTN.isSelected()){
+            v=3;
         }
         ////////////////////////////////////////////////////////////////////////
         /*SE A VEZ FOR DO 1º E O MESMO ESTIVER HABILITADO*/
@@ -719,6 +719,17 @@ public class Tela extends javax.swing.JFrame {
         ////////////////////////////////////////////////////////////////////////
         /*SE A VEZ FOR DO 3º E O MESMO ESTIVER DESABILITADO*/
         if(v == 3 && TEC_4_BTN.isSelected() || v == 3 && !TEC_4_BTN.isEnabled()){
+            v = 2;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 2º TÉCNICO ESTIVER HABILITADO*/
+        if(TEC_4_BTN.isSelected() && TEC_2_BTN.isSelected() && !TEC_3_BTN.isSelected()){
+            //JOptionPane.showMessageDialog(null,"iiiiiiii");
+            TEXTO_NOME_DA_VEZ.setText(PSL3[0]+" - "+PSL3[1]);
+            AT2++;
+            TEC_3_BTN.setText(PSL3[0]+" - "+AT2);
+            TDA++;
+            
             v = 0;
         }
         ////////////////////////////////////////////////////////////////////////
