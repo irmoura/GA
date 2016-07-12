@@ -144,57 +144,70 @@ public class Tela extends javax.swing.JFrame {
 
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TEC_1_BTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TEC_1_BTN.setText("Técnico 1");
+        TEC_1_BTN.setContentAreaFilled(false);
         TEC_1_BTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TEC_1_BTNMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(TEC_1_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 370, -1, -1));
+        jDesktopPane1.add(TEC_1_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 370, -1, -1));
 
+        TEC_2_BTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TEC_2_BTN.setText("Técnico 2");
+        TEC_2_BTN.setContentAreaFilled(false);
         TEC_2_BTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TEC_2_BTNMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(TEC_2_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(193, 370, -1, -1));
+        jDesktopPane1.add(TEC_2_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, -1, -1));
 
+        TEC_3_BTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TEC_3_BTN.setText("Técnico 3");
+        TEC_3_BTN.setContentAreaFilled(false);
         TEC_3_BTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TEC_3_BTNMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(TEC_3_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(313, 370, -1, -1));
+        jDesktopPane1.add(TEC_3_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
 
+        TEC_4_BTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TEC_4_BTN.setText("Técnico 4");
+        TEC_4_BTN.setBorderPainted(false);
+        TEC_4_BTN.setContentAreaFilled(false);
         TEC_4_BTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TEC_4_BTNMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(TEC_4_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 370, -1, -1));
+        jDesktopPane1.add(TEC_4_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
 
+        TEC_5_BTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TEC_5_BTN.setText("Técnico 5");
+        TEC_5_BTN.setContentAreaFilled(false);
         TEC_5_BTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TEC_5_BTNMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(TEC_5_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 370, -1, -1));
+        jDesktopPane1.add(TEC_5_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, -1, -1));
 
         TEXTO_NOME_DA_VEZ.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         TEXTO_NOME_DA_VEZ.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jDesktopPane1.add(TEXTO_NOME_DA_VEZ, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 680, 90));
 
+        BOTAO_ZERAR.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BOTAO_ZERAR.setText("ZERAR");
+        BOTAO_ZERAR.setContentAreaFilled(false);
         BOTAO_ZERAR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BOTAO_ZERARActionPerformed(evt);
             }
         });
-        jDesktopPane1.add(BOTAO_ZERAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
+        jDesktopPane1.add(BOTAO_ZERAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
 
         TEXTO_TOTAL.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TEXTO_TOTAL.setText("Atendimentos : ");
@@ -228,7 +241,7 @@ public class Tela extends javax.swing.JFrame {
         QDT = Integer.parseInt(PSL1[0]);
         
         if(QDT == 3){
-            HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
+        HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
         MCT1 = Integer.parseInt(PSL2[3]);//Minuto chegada Técnico 1
         HST1 = Integer.parseInt(PSL2[4]);//Hora Saida Técnico 1
         MST1 = Integer.parseInt(PSL2[5]);//Minuto Saida Técnico 1
@@ -250,7 +263,7 @@ public class Tela extends javax.swing.JFrame {
         ST3 = PSL4[7];//Saida Técnico 3
         }
         if(QDT == 5){
-                HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
+        HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
         MCT1 = Integer.parseInt(PSL2[3]);//Minuto chegada Técnico 1
         HST1 = Integer.parseInt(PSL2[4]);//Hora Saida Técnico 1
         MST1 = Integer.parseInt(PSL2[5]);//Minuto Saida Técnico 1
@@ -486,7 +499,7 @@ public class Tela extends javax.swing.JFrame {
                 AT3 = 0;
                 AT4 = 0;
                 AT5 = 0;
-                TEXTO_TOTAL.setText("ATENDIMENTOS : ");
+                TEXTO_TOTAL.setText("Atendimentos : ");
                 TEXTO_NOME_DA_VEZ.setText("");
                 TEC_1_BTN.setText(""+PSL2[0]);
                 TEC_2_BTN.setText(""+PSL3[0]);
@@ -524,7 +537,7 @@ public class Tela extends javax.swing.JFrame {
 
         ////////////////////////////////////////////////////////////////////////
         /*SE NENHUM BOTAO ESTIVER HABILITADO*/
-        if((TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() && TEC_5_BTN.isSelected()) || 
+        if((TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() && !TEC_5_BTN.isSelected()) || 
           (!TEC_1_BTN.isEnabled() && !TEC_2_BTN.isEnabled() && !TEC_3_BTN.isEnabled() && !TEC_4_BTN.isEnabled() && !TEC_5_BTN.isEnabled())){
             JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
         }
@@ -748,10 +761,10 @@ public class Tela extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(TEC_1_BTN.isSelected()){
             TEC_1_BTN.setSelected(true);
-            TEC_1_BTN.setBackground(Color.red);
+            TEC_1_BTN.setForeground(Color.red);
         }else{
             TEC_1_BTN.setSelected(false);
-            TEC_1_BTN.setBackground(Color.green);
+            TEC_1_BTN.setForeground(Color.black);
         }
     }//GEN-LAST:event_TEC_1_BTNMouseClicked
 
@@ -759,10 +772,10 @@ public class Tela extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(TEC_2_BTN.isSelected()){
             TEC_2_BTN.setSelected(true);
-            TEC_2_BTN.setBackground(Color.red);
+            TEC_2_BTN.setForeground(Color.red);
         }else{
             TEC_2_BTN.setSelected(false);
-            TEC_2_BTN.setBackground(Color.green);
+            TEC_2_BTN.setForeground(Color.black);
         }
     }//GEN-LAST:event_TEC_2_BTNMouseClicked
 
@@ -770,10 +783,10 @@ public class Tela extends javax.swing.JFrame {
         // TODO add your handling code here:
          if(TEC_3_BTN.isSelected()){
             TEC_3_BTN.setSelected(true);
-            TEC_3_BTN.setBackground(Color.red);
+            TEC_3_BTN.setForeground(Color.red);
         }else{
             TEC_3_BTN.setSelected(false);
-            TEC_3_BTN.setBackground(Color.green);
+            TEC_3_BTN.setForeground(Color.black);
         }
     }//GEN-LAST:event_TEC_3_BTNMouseClicked
 
@@ -781,10 +794,10 @@ public class Tela extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(TEC_4_BTN.isSelected()){
             TEC_4_BTN.setSelected(true);
-            TEC_4_BTN.setBackground(Color.red);
+            TEC_4_BTN.setForeground(Color.red);
         }else{
             TEC_4_BTN.setSelected(false);
-            TEC_4_BTN.setBackground(Color.green);
+            TEC_4_BTN.setForeground(Color.black);
         }
     }//GEN-LAST:event_TEC_4_BTNMouseClicked
 
@@ -792,10 +805,10 @@ public class Tela extends javax.swing.JFrame {
         // TODO add your handling code here:
          if(TEC_5_BTN.isSelected()){
             TEC_5_BTN.setSelected(true);
-            TEC_5_BTN.setBackground(Color.red);
+            TEC_5_BTN.setForeground(Color.red);
         }else{
             TEC_5_BTN.setSelected(false);
-            TEC_5_BTN.setBackground(Color.green);
+            TEC_5_BTN.setForeground(Color.black);
         }
     }//GEN-LAST:event_TEC_5_BTNMouseClicked
 
