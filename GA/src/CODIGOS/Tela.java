@@ -236,7 +236,7 @@ public class Tela extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
-        Arquivo.ler("CONFIG3");
+        Arquivo.ler("CONFIG5");
         
         QDT = Integer.parseInt(PSL1[0]);
         
@@ -339,6 +339,33 @@ public class Tela extends javax.swing.JFrame {
                 TEC_5_BTN.setEnabled(true);
                 TEC_5_BTN.setSelected(false);
                 TEC_5_BTN.setForeground(Color.black);
+            }
+                ////////////////////////////////////////////////////////////////////
+            /*TÉCNICOS DESABILITADOS NA HORA E MINUTO DEFINIDOS*/
+            if(horas.equals(ET1)){
+                TEC_1_BTN.setEnabled(false);
+                TEC_1_BTN.setSelected(true);
+                TEC_1_BTN.setForeground(Color.red);
+            }
+            if(horas.equals(ET2)){
+                TEC_2_BTN.setEnabled(false);
+                TEC_2_BTN.setSelected(true);
+                TEC_2_BTN.setForeground(Color.red);
+            }
+            if(horas.equals(ET3)){
+                TEC_3_BTN.setEnabled(false);
+                TEC_3_BTN.setSelected(true);
+                TEC_3_BTN.setForeground(Color.red);
+            }
+            if(horas.equals(ET4)){
+                TEC_4_BTN.setEnabled(false);
+                TEC_4_BTN.setSelected(true);
+                TEC_4_BTN.setForeground(Color.red);
+            }
+            if(horas.equals(ET5)){
+                TEC_5_BTN.setEnabled(false);
+                TEC_5_BTN.setSelected(true);
+                TEC_5_BTN.setForeground(Color.red);
             }
             }else
             if(QDT == 3){
@@ -497,6 +524,28 @@ public class Tela extends javax.swing.JFrame {
             TEC_5_BTN.setForeground(Color.red);
             TEC_5_BTN.setText(""+PSL6[0]);
         }
+         ////////////////////////////////////////////////////////////////////////
+        /*DEPOIS DO HORARIO DE SAIDA O BOTAO INICIA DESABILITADO ||| */
+        if(hora == HST1 && minuto == MST1 || hora == HST1 && minuto >  MST1 || hora > HST1){
+            TEC_1_BTN.setSelected(true);
+            TEC_1_BTN.setForeground(Color.red);
+        }
+        if(hora == HST2 && minuto == MST2 || hora == HST2 && minuto >  MST2 || hora > HST2){
+            TEC_2_BTN.setSelected(true);
+            TEC_2_BTN.setForeground(Color.red);
+        }
+        if(hora == HST3 && minuto == MST3 || hora == HST3 && minuto >  MST3 || hora > HST3){
+            TEC_3_BTN.setSelected(true);
+            TEC_3_BTN.setForeground(Color.red);
+        }
+        if(hora == HST4 && minuto == MST4 || hora == HST4 && minuto >  MST4 || hora > HST4){
+            TEC_4_BTN.setSelected(true);
+            TEC_4_BTN.setForeground(Color.red);
+        }
+        if(hora == HST5 && minuto == MST5 || hora == HST5 && minuto >  MST5 || hora > HST5){
+            TEC_5_BTN.setSelected(true);
+            TEC_5_BTN.setForeground(Color.red);
+        }
         
         }
         
@@ -582,7 +631,7 @@ public class Tela extends javax.swing.JFrame {
 
         ////////////////////////////////////////////////////////////////////////
         /*SE NENHUM BOTAO ESTIVER HABILITADO*/
-        if((TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() && !TEC_5_BTN.isSelected()) || 
+        if((TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() && TEC_5_BTN.isSelected()) || 
           (!TEC_1_BTN.isEnabled() && !TEC_2_BTN.isEnabled() && !TEC_3_BTN.isEnabled() && !TEC_4_BTN.isEnabled() && !TEC_5_BTN.isEnabled())){
             JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
         }
