@@ -442,11 +442,23 @@ public class Tela extends javax.swing.JFrame {
         }
         ////////////////////////////////////////////////////////////////////////
         /*ANTES DO HORARIO O BOTAO INICIA DESABILITADO*/
-        if(hora < HCT1 || hora == HCT1 && minuto < HCT1){
+        if(hora < HCT1 || hora == HCT1 && minuto < MCT1){
             TEC_2_BTN.setEnabled(false);
             TEC_2_BTN.setSelected(true);
             TEC_2_BTN.setForeground(Color.red);
             TEC_2_BTN.setText(""+PSL2[0]);
+        }
+        if(hora < HCT2 || hora == HCT2 && minuto < MCT2){
+            TEC_3_BTN.setEnabled(false);
+            TEC_3_BTN.setSelected(true);
+            TEC_3_BTN.setForeground(Color.red);
+            TEC_3_BTN.setText(""+PSL3[0]);
+        }
+        if(hora < HCT3 || hora == HCT3 && minuto < MCT3){
+            TEC_4_BTN.setEnabled(false);
+            TEC_4_BTN.setSelected(true);
+            TEC_4_BTN.setForeground(Color.red);
+            TEC_4_BTN.setText(""+PSL4[0]);
         }
         ////////////////////////////////////////////////////////////////////////
         
@@ -494,38 +506,38 @@ public class Tela extends javax.swing.JFrame {
             TEC_5_BTN.setBackground(Color.green);
         }
         /*ANTES DO HORARIO O BOTAO INICIA DESABILITADO*/
-        if((hora < HCT1)){
+        if(hora < HCT1 || hora == HCT1 && minuto < MCT1){
             TEC_1_BTN.setEnabled(false);
             TEC_1_BTN.setSelected(true);
             TEC_1_BTN.setForeground(Color.red);
             TEC_1_BTN.setText(""+PSL2[0]);
         }
-        if((hora <= HCT2 && minuto < MCT2)){
+        if(hora < HCT2 || hora == HCT2 && minuto < MCT2){
             TEC_2_BTN.setEnabled(false);
             TEC_2_BTN.setSelected(true);
             TEC_2_BTN.setForeground(Color.red);
             TEC_2_BTN.setText(""+PSL3[0]);
         }
-        if((hora <= HCT3 && minuto < MCT3)){
+        if(hora < HCT3 || hora == HCT3 && minuto < MCT3){
             TEC_3_BTN.setEnabled(false);
             TEC_3_BTN.setSelected(true);
             TEC_3_BTN.setForeground(Color.red);
             TEC_3_BTN.setText(""+PSL4[0]);
         }
-        if((hora <= HCT4 && minuto < MCT4)){
+        if(hora < HCT4 || hora == HCT4 && minuto < MCT4){
             TEC_4_BTN.setEnabled(false);
             TEC_4_BTN.setSelected(true);
             TEC_4_BTN.setForeground(Color.red);
             TEC_4_BTN.setText(""+PSL5[0]);
         }
-        if((hora <= HCT5 && minuto < MCT5)){
+        if(hora < HCT5 || hora == HCT5 && minuto < MCT5){
             TEC_5_BTN.setEnabled(false);
             TEC_5_BTN.setSelected(true);
             TEC_5_BTN.setForeground(Color.red);
             TEC_5_BTN.setText(""+PSL6[0]);
         }
          ////////////////////////////////////////////////////////////////////////
-        /*DEPOIS DO HORARIO DE SAIDA O BOTAO INICIA DESABILITADO ||| */
+        /*DEPOIS DO HORARIO DE SAIDA O BOTAO INICIA DESABILITADO ||||| */
         if(hora == HST1 && minuto == MST1 || hora == HST1 && minuto >  MST1 || hora > HST1){
             TEC_1_BTN.setSelected(true);
             TEC_1_BTN.setForeground(Color.red);
