@@ -247,7 +247,7 @@ public class Tela extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
-        Arquivo.ler("CONFIG3");
+        Arquivo.ler("CONFIG5");
         
         QDT = Integer.parseInt(PSL1[0]);
         
@@ -544,27 +544,27 @@ public class Tela extends javax.swing.JFrame {
         if((hora >= HCT1 && minuto >= MCT1) ||
            (hora > HCT1)){
             TEC_1_BTN.setSelected(false);
-            TEC_1_BTN.setBackground(Color.green);
+            TEC_1_BTN.setForeground(Color.black);
         }
         if((hora >= HCT2 && minuto >= MCT2) ||
            (hora > HCT2)){
             TEC_2_BTN.setSelected(false);
-            TEC_2_BTN.setBackground(Color.green);
+            TEC_2_BTN.setForeground(Color.black);
         }
         if((hora >= HCT3 && minuto >= MCT3) ||
            (hora > HCT3)){
             TEC_3_BTN.setSelected(false);
-            TEC_3_BTN.setBackground(Color.green);
+            TEC_3_BTN.setForeground(Color.black);
         }
         if((hora >= HCT4 && minuto >= MCT4) ||
            (hora > HCT4)){
             TEC_4_BTN.setSelected(false);
-            TEC_4_BTN.setBackground(Color.green);
+            TEC_4_BTN.setForeground(Color.black);
         }
         if((hora >= HCT5 && minuto >= MCT5) ||
            (hora > HCT5)){
             TEC_5_BTN.setSelected(false);
-            TEC_5_BTN.setBackground(Color.green);
+            TEC_5_BTN.setForeground(Color.black);
         }
         /*ANTES DO HORARIO O BOTAO INICIA DESABILITADO*/
         if(hora < HCT1 || hora == HCT1 && minuto < MCT1){
@@ -717,9 +717,9 @@ public class Tela extends javax.swing.JFrame {
         if(v == 1 && (TEC_1_BTN.isSelected() && TEC_2_BTN.isSelected() && TEC_3_BTN.isSelected() && TEC_4_BTN.isSelected() && !TEC_5_BTN.isSelected()) || 
           (!TEC_1_BTN.isEnabled() && !TEC_2_BTN.isEnabled() && !TEC_3_BTN.isEnabled() && !TEC_4_BTN.isEnabled() && TEC_5_BTN.isEnabled())){
             
-            TEXTO_NOME_DA_VEZ.setText(PSL2[0]+" - "+PSL2[1]);
+            TEXTO_NOME_DA_VEZ.setText(PSL6[0]+" - "+PSL6[1]);
             AT5++;
-            TEC_5_BTN.setText(PSL2[0]+" - "+AT5);
+            TEC_5_BTN.setText(PSL6[0]+" - "+AT5);
             TDA++;
             
         }
