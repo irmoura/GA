@@ -403,27 +403,27 @@ public class Tela extends javax.swing.JFrame {
             }
                 ////////////////////////////////////////////////////////////////////
             /*TÉCNICOS DESABILITADOS NA HORA E MINUTO DEFINIDOS*/
-            if(horas.equals(ET1)){
+            if(horas.equals(ST1)){
                 TEC_1_BTN.setEnabled(false);
                 TEC_1_BTN.setSelected(true);
                 TEC_1_BTN.setForeground(Color.red);
             }
-            if(horas.equals(ET2)){
+            if(horas.equals(ST2)){
                 TEC_2_BTN.setEnabled(false);
                 TEC_2_BTN.setSelected(true);
                 TEC_2_BTN.setForeground(Color.red);
             }
-            if(horas.equals(ET3)){
+            if(horas.equals(ST3)){
                 TEC_3_BTN.setEnabled(false);
                 TEC_3_BTN.setSelected(true);
                 TEC_3_BTN.setForeground(Color.red);
             }
-            if(horas.equals(ET4)){
+            if(horas.equals(ST4)){
                 TEC_4_BTN.setEnabled(false);
                 TEC_4_BTN.setSelected(true);
                 TEC_4_BTN.setForeground(Color.red);
             }
-            if(horas.equals(ET5)){
+            if(horas.equals(ST5)){
                 TEC_5_BTN.setEnabled(false);
                 TEC_5_BTN.setSelected(true);
                 TEC_5_BTN.setForeground(Color.red);
@@ -446,6 +446,23 @@ public class Tela extends javax.swing.JFrame {
                 TEC_4_BTN.setEnabled(true);
                 TEC_4_BTN.setSelected(false);
                 TEC_4_BTN.setForeground(Color.black);
+            }
+                ////////////////////////////////////////////////////////////////////
+            /*TÉCNICOS DESABILITADOS NA HORA E MINUTO DEFINIDOS*/
+            if(horas.equals(ST1)){
+                TEC_2_BTN.setEnabled(false);
+                TEC_2_BTN.setSelected(true);
+                TEC_2_BTN.setForeground(Color.red);
+            }
+            if(horas.equals(ST2)){
+                TEC_3_BTN.setEnabled(false);
+                TEC_3_BTN.setSelected(true);
+                TEC_3_BTN.setForeground(Color.red);
+            }
+            if(horas.equals(ST3)){
+                TEC_4_BTN.setEnabled(false);
+                TEC_4_BTN.setSelected(true);
+                TEC_4_BTN.setForeground(Color.red);
             }
             }
             
