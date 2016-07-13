@@ -74,6 +74,12 @@ public class Tela extends javax.swing.JFrame {
     public Timer timer;
     
     public Password password;
+    
+    public String segundos;
+    public String minutos;
+    public String HC;//HORARIO CRONOMETRO
+    public int minutos_int;
+    public int horas_int;
    
     /**
      * Creates new form Tela
@@ -126,6 +132,7 @@ public class Tela extends javax.swing.JFrame {
         TEXTO_TOTAL = new javax.swing.JLabel();
         TEXTO_HORA = new javax.swing.JLabel();
         TEXTO_DESENVOLVEDOR = new javax.swing.JLabel();
+        TEXTO_CRONOMETRO = new javax.swing.JLabel();
         PAPEL_DE_PAREDE = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -220,6 +227,10 @@ public class Tela extends javax.swing.JFrame {
         TEXTO_DESENVOLVEDOR.setText("Desenvolvedor : Ismael Ribeiro");
         jDesktopPane1.add(TEXTO_DESENVOLVEDOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
 
+        TEXTO_CRONOMETRO.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        TEXTO_CRONOMETRO.setText("00:00:00");
+        jDesktopPane1.add(TEXTO_CRONOMETRO, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, -1, -1));
+
         PAPEL_DE_PAREDE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CODIGOS/Imagens/vistamizer-windows-vista-wallpaper-pack-14.jpg"))); // NOI18N
         PAPEL_DE_PAREDE.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -236,7 +247,7 @@ public class Tela extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
-        Arquivo.ler("CONFIG5");
+        Arquivo.ler("CONFIG3");
         
         QDT = Integer.parseInt(PSL1[0]);
         
@@ -303,10 +314,60 @@ public class Tela extends javax.swing.JFrame {
         BOTAO_ZERAR.setEnabled(false);
         TEXTO_HORA.setForeground(Color.yellow);
         TEXTO_TOTAL.setForeground(Color.yellow);
+        TEXTO_CRONOMETRO.setForeground(Color.yellow);
         
         timer = new Timer(1000, (ActionEvent e) -> {
             
             contador++;
+            
+            
+            /////////////////////////SEGUNDOS/////////////////////////
+                if(contador < 10){
+                    segundos = "0"+contador;
+                }
+                if(contador > 9){
+                    segundos = ""+contador;
+                }
+                if(contador == 60){
+                    contador = 0;
+                    segundos = "0"+contador;
+                    minutos_int++;
+                }
+                /////////////////////////SEGUNDOS/////////////////////////
+                /////////////////////////MINUTOS/////////////////////////
+                if(minutos_int == 0){
+                    minutos = "00";
+                }
+                if(minutos_int < 10){
+                    minutos = "0"+minutos_int;
+                }
+                if(minutos_int > 9){
+                    minutos = ""+minutos_int;
+                }
+                if(minutos_int == 60){
+                    minutos_int = 0;
+                    minutos = "0"+minutos_int;
+                    horas_int++;
+                }
+                /////////////////////////MINUTOS/////////////////////////
+                /////////////////////////HORAS/////////////////////////
+                if(horas_int == 0){
+                    HC = "00";
+                }
+                if(horas_int < 10){
+                    HC = "0"+horas_int;
+                }
+                if(horas_int > 9){
+                    HC = ""+horas_int;
+                }
+                if(horas_int == 24){
+                    horas_int = 0;
+                    HC = "0"+horas_int;
+                }
+                /////////////////////////HORAS/////////////////////////
+                
+                TEXTO_CRONOMETRO.setText(""+HC+":"+minutos+":"+segundos);
+            
             
             obterHoras();
 
@@ -962,6 +1023,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JToggleButton TEC_3_BTN;
     private javax.swing.JToggleButton TEC_4_BTN;
     private javax.swing.JToggleButton TEC_5_BTN;
+    private javax.swing.JLabel TEXTO_CRONOMETRO;
     private javax.swing.JLabel TEXTO_DESENVOLVEDOR;
     private javax.swing.JLabel TEXTO_HORA;
     private javax.swing.JLabel TEXTO_NOME_DA_VEZ;
