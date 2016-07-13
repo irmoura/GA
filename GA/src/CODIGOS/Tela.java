@@ -236,7 +236,7 @@ public class Tela extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
-        Arquivo.ler("CONFIG5");
+        Arquivo.ler("CONFIG3");
         
         QDT = Integer.parseInt(PSL1[0]);
         
@@ -383,7 +383,7 @@ public class Tela extends javax.swing.JFrame {
         TEC_5_BTN.setEnabled(false);
         
          ////////////////////////////////////////////////////////////////////////
-        /*DEPOIS DO HORARIO DE CHEGADA O BOTAO INICIA HABILITADO*/
+        /*DEPOIS DO HORARIO DE CHEGADA O BOTAO INICIA HABILITADO ||| */
         if((hora >= HCT1 && minuto >= MCT1) ||
            (hora > HCT1)){
             TEC_2_BTN.setSelected(false);
@@ -399,9 +399,23 @@ public class Tela extends javax.swing.JFrame {
             TEC_4_BTN.setSelected(false);
             TEC_4_BTN.setForeground(Color.black);
         }
+         ////////////////////////////////////////////////////////////////////////
+        /*DEPOIS DO HORARIO DE SAIDA O BOTAO INICIA DESABILITADO ||| */
+        if(hora == HST1 && minuto == MST1 || hora == HST1 && minuto >  MST1 || hora > HST1){
+            TEC_2_BTN.setSelected(true);
+            TEC_2_BTN.setForeground(Color.red);
+        }
+        if(hora == HST2 && minuto == MST2 || hora == HST2 && minuto >  MST2 || hora > HST2){
+            TEC_3_BTN.setSelected(true);
+            TEC_3_BTN.setForeground(Color.red);
+        }
+        if(hora == HST3 && minuto == MST3 || hora == HST3 && minuto >  MST3 || hora > HST3){
+            TEC_4_BTN.setSelected(true);
+            TEC_4_BTN.setForeground(Color.red);
+        }
         ////////////////////////////////////////////////////////////////////////
         /*ANTES DO HORARIO O BOTAO INICIA DESABILITADO*/
-        if((hora <= HCT1 && minuto < MCT1)){
+        if(hora < HCT1 || hora == HCT1 && minuto < HCT1){
             TEC_2_BTN.setEnabled(false);
             TEC_2_BTN.setSelected(true);
             TEC_2_BTN.setForeground(Color.red);
