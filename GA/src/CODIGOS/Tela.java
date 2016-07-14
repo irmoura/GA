@@ -123,7 +123,7 @@ public class Tela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        JanelaInternaPrincipal = new javax.swing.JDesktopPane();
         TEC_1_BTN = new javax.swing.JToggleButton();
         TEC_2_BTN = new javax.swing.JToggleButton();
         TEC_3_BTN = new javax.swing.JToggleButton();
@@ -136,8 +136,14 @@ public class Tela extends javax.swing.JFrame {
         TEXTO_DESENVOLVEDOR = new javax.swing.JLabel();
         TEXTO_CRONOMETRO = new javax.swing.JLabel();
         PAPEL_DE_PAREDE = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenuConfigurar = new javax.swing.JMenu();
+        jMenuItemConfigurar = new javax.swing.JMenuItem();
+        jMenuSobre = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Gerenciador de Atendimento");
         setResizable(false);
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -151,7 +157,7 @@ public class Tela extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JanelaInternaPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         TEC_1_BTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TEC_1_BTN.setText("Técnico 1");
@@ -161,7 +167,7 @@ public class Tela extends javax.swing.JFrame {
                 TEC_1_BTNMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(TEC_1_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 370, -1, -1));
+        JanelaInternaPrincipal.add(TEC_1_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 370, -1, -1));
 
         TEC_2_BTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TEC_2_BTN.setText("Técnico 2");
@@ -171,7 +177,7 @@ public class Tela extends javax.swing.JFrame {
                 TEC_2_BTNMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(TEC_2_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, -1, -1));
+        JanelaInternaPrincipal.add(TEC_2_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, -1, -1));
 
         TEC_3_BTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TEC_3_BTN.setText("Técnico 3");
@@ -181,7 +187,7 @@ public class Tela extends javax.swing.JFrame {
                 TEC_3_BTNMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(TEC_3_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
+        JanelaInternaPrincipal.add(TEC_3_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
 
         TEC_4_BTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TEC_4_BTN.setText("Técnico 4");
@@ -192,7 +198,7 @@ public class Tela extends javax.swing.JFrame {
                 TEC_4_BTNMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(TEC_4_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
+        JanelaInternaPrincipal.add(TEC_4_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
 
         TEC_5_BTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         TEC_5_BTN.setText("Técnico 5");
@@ -202,11 +208,11 @@ public class Tela extends javax.swing.JFrame {
                 TEC_5_BTNMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(TEC_5_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, -1, -1));
+        JanelaInternaPrincipal.add(TEC_5_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, -1, -1));
 
         TEXTO_NOME_DA_VEZ.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         TEXTO_NOME_DA_VEZ.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jDesktopPane1.add(TEXTO_NOME_DA_VEZ, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 680, 90));
+        JanelaInternaPrincipal.add(TEXTO_NOME_DA_VEZ, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 680, 90));
 
         BOTAO_ZERAR.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BOTAO_ZERAR.setText("ZERAR");
@@ -216,22 +222,22 @@ public class Tela extends javax.swing.JFrame {
                 BOTAO_ZERARActionPerformed(evt);
             }
         });
-        jDesktopPane1.add(BOTAO_ZERAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+        JanelaInternaPrincipal.add(BOTAO_ZERAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
 
         TEXTO_TOTAL.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TEXTO_TOTAL.setText("Atendimentos : ");
-        jDesktopPane1.add(TEXTO_TOTAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        JanelaInternaPrincipal.add(TEXTO_TOTAL, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         TEXTO_HORA.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TEXTO_HORA.setText("00:00:00");
-        jDesktopPane1.add(TEXTO_HORA, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, -1, -1));
+        JanelaInternaPrincipal.add(TEXTO_HORA, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, -1, -1));
 
         TEXTO_DESENVOLVEDOR.setText("Desenvolvedor : Ismael Ribeiro");
-        jDesktopPane1.add(TEXTO_DESENVOLVEDOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+        JanelaInternaPrincipal.add(TEXTO_DESENVOLVEDOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
 
         TEXTO_CRONOMETRO.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TEXTO_CRONOMETRO.setText("00:00:00");
-        jDesktopPane1.add(TEXTO_CRONOMETRO, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, -1, -1));
+        JanelaInternaPrincipal.add(TEXTO_CRONOMETRO, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, -1, -1));
 
         PAPEL_DE_PAREDE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/CODIGOS/Imagens/vistamizer-windows-vista-wallpaper-pack-14.jpg"))); // NOI18N
         PAPEL_DE_PAREDE.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -239,9 +245,30 @@ public class Tela extends javax.swing.JFrame {
                 PAPEL_DE_PAREDEMouseClicked(evt);
             }
         });
-        jDesktopPane1.add(PAPEL_DE_PAREDE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        JanelaInternaPrincipal.add(PAPEL_DE_PAREDE, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(JanelaInternaPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jMenuConfigurar.setText("Arquivo");
+
+        jMenuItemConfigurar.setText("Configurar");
+        jMenuItemConfigurar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConfigurarActionPerformed(evt);
+            }
+        });
+        jMenuConfigurar.add(jMenuItemConfigurar);
+
+        jMenuBar1.add(jMenuConfigurar);
+
+        jMenuSobre.setText("Ajuda");
+
+        jMenuItem2.setText("Sobre");
+        jMenuSobre.add(jMenuItem2);
+
+        jMenuBar1.add(jMenuSobre);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
         setLocationRelativeTo(null);
@@ -1007,6 +1034,45 @@ public class Tela extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_TEC_5_BTNMouseClicked
 
+    private void jMenuItemConfigurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConfigurarActionPerformed
+        // TODO add your handling code here:
+        Object[] options = { "Sim", "Não" };   
+        int opcao = JOptionPane.showOptionDialog(null,"Deseja alterar as configurações ?","Aviso",
+        JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);   
+  
+        if (opcao != 0){
+            
+        }else{
+              
+            String senha = "";
+            int tentativas = 3;//Define o número de tentativas que o usuário terá para acertar a senha.
+            
+            for(int i=0;i<tentativas;i++)
+            {
+                if(!senha.equals(password.senha))      
+                {
+                    
+                    senha = JOptionPane.showInputDialog(null,"Password: ","Warning "+(i+1)+"ª tentativa.",JOptionPane.OK_CANCEL_OPTION);
+                    
+                }    
+            }
+            if (!senha.equals(password.senha) || senha.equals(null))    
+            {
+                JOptionPane.showMessageDialog(null,"Senha incorreta ou operação cancelada","Aviso",JOptionPane.WARNING_MESSAGE);
+            }
+            else
+            {
+                if(QDT == 5){
+                
+                }else
+                if(QDT == 3){
+                     Configurar cf = new Configurar();
+                     cf.setVisible(true);
+                }
+            }
+        }
+    }//GEN-LAST:event_jMenuItemConfigurarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1045,6 +1111,7 @@ public class Tela extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BOTAO_ZERAR;
+    private javax.swing.JDesktopPane JanelaInternaPrincipal;
     private javax.swing.JLabel PAPEL_DE_PAREDE;
     private javax.swing.JToggleButton TEC_1_BTN;
     private javax.swing.JToggleButton TEC_2_BTN;
@@ -1056,6 +1123,10 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel TEXTO_HORA;
     private javax.swing.JLabel TEXTO_NOME_DA_VEZ;
     private javax.swing.JLabel TEXTO_TOTAL;
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuConfigurar;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItemConfigurar;
+    private javax.swing.JMenu jMenuSobre;
     // End of variables declaration//GEN-END:variables
 }
