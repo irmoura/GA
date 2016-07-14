@@ -623,22 +623,27 @@ public class Tela extends javax.swing.JFrame {
          ////////////////////////////////////////////////////////////////////////
         /*DEPOIS DO HORARIO DE SAIDA O BOTAO INICIA DESABILITADO ||||| */
         if(hora == HST1 && minuto == MST1 || hora == HST1 && minuto >  MST1 || hora > HST1){
+            TEC_1_BTN.setEnabled(false);
             TEC_1_BTN.setSelected(true);
             TEC_1_BTN.setForeground(Color.red);
         }
         if(hora == HST2 && minuto == MST2 || hora == HST2 && minuto >  MST2 || hora > HST2){
+            TEC_2_BTN.setEnabled(false);
             TEC_2_BTN.setSelected(true);
             TEC_2_BTN.setForeground(Color.red);
         }
         if(hora == HST3 && minuto == MST3 || hora == HST3 && minuto >  MST3 || hora > HST3){
+            TEC_3_BTN.setEnabled(false);
             TEC_3_BTN.setSelected(true);
             TEC_3_BTN.setForeground(Color.red);
         }
         if(hora == HST4 && minuto == MST4 || hora == HST4 && minuto >  MST4 || hora > HST4){
+            TEC_4_BTN.setEnabled(false);
             TEC_4_BTN.setSelected(true);
             TEC_4_BTN.setForeground(Color.red);
         }
         if(hora == HST5 && minuto == MST5 || hora == HST5 && minuto >  MST5 || hora > HST5){
+            TEC_5_BTN.setEnabled(false);
             TEC_5_BTN.setSelected(true);
             TEC_5_BTN.setForeground(Color.red);
         }
