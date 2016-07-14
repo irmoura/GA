@@ -80,12 +80,14 @@ public class Tela extends javax.swing.JFrame {
     public String HC;//HORARIO CRONOMETRO
     public int minutos_int;
     public int horas_int;
+    
+    public String arquivo = "CONFIG3";
    
     /**
      * Creates new form Tela
      */
     public Tela() {
-        initComponents();  
+        initComponents();
     }
     
     public void inicioVisibilidadeBotoes(Boolean t1, Boolean t2, Boolean t3, Boolean t4, Boolean t5){
@@ -247,7 +249,7 @@ public class Tela extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
-        Arquivo.ler("CONFIG5");
+        Arquivo.ler(arquivo);
         
         QDT = Integer.parseInt(PSL1[0]);
         
@@ -489,13 +491,11 @@ public class Tela extends javax.swing.JFrame {
         
          ////////////////////////////////////////////////////////////////////////
         /*DEPOIS DO HORARIO DE CHEGADA O BOTAO INICIA HABILITADO ||| */
-        if((hora >= HCT1 && minuto >= MCT1) ||
-           (hora > HCT1)){
+        if((hora >= HCT1 && minuto >= MCT1) && (hora > HCT1 && minuto <60) && (hora <= HST1 && minuto <= MST1)){
             TEC_2_BTN.setSelected(false);
             TEC_2_BTN.setForeground(Color.black);
         }
-        if((hora >= HCT2 && minuto >= MCT2) ||
-           (hora > HCT2)){
+        if((hora >= HCT2 && minuto >= MCT2) && (hora > HCT2 && minuto <60) && (hora <= HST2 && minuto <= MST2)){
             TEC_3_BTN.setSelected(false);
             TEC_3_BTN.setForeground(Color.black);
         }
@@ -507,16 +507,22 @@ public class Tela extends javax.swing.JFrame {
          ////////////////////////////////////////////////////////////////////////
         /*DEPOIS DO HORARIO DE SAIDA O BOTAO INICIA DESABILITADO ||| */
         if(hora == HST1 && minuto == MST1 || hora == HST1 && minuto >  MST1 || hora > HST1){
+            TEC_2_BTN.setEnabled(false);
             TEC_2_BTN.setSelected(true);
             TEC_2_BTN.setForeground(Color.red);
+            TEC_2_BTN.setText(""+PSL2[0]);//CORRETO
         }
         if(hora == HST2 && minuto == MST2 || hora == HST2 && minuto >  MST2 || hora > HST2){
+            TEC_3_BTN.setEnabled(false);
             TEC_3_BTN.setSelected(true);
             TEC_3_BTN.setForeground(Color.red);
+            TEC_3_BTN.setText(""+PSL3[0]);//CORRETO
         }
         if(hora == HST3 && minuto == MST3 || hora == HST3 && minuto >  MST3 || hora > HST3){
+            TEC_4_BTN.setEnabled(false);
             TEC_4_BTN.setSelected(true);
             TEC_4_BTN.setForeground(Color.red);
+            TEC_4_BTN.setText(""+PSL4[0]);//CORRETO
         }
         ////////////////////////////////////////////////////////////////////////
         /*ANTES DO HORARIO O BOTAO INICIA DESABILITADO*/
