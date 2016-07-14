@@ -430,7 +430,7 @@ public class Tela extends javax.swing.JFrame {
                 TEC_5_BTN.setSelected(true);
                 TEC_5_BTN.setForeground(Color.red);
             }
-            }else
+            }
             if(QDT == 3){
                     ////////////////////////////////////////////////////////////////////
             /*TÉCNICOS HABILITADOS NA HORA E MINUTO DEFINIDOS*/
