@@ -1066,8 +1066,9 @@ public class Tela extends javax.swing.JFrame {
                 
                 }else
                 if(QDT == 3){
-                     Configurar cf = new Configurar();
-                     cf.setVisible(true);
+                     /*MenuConfigurar3 cf = new MenuConfigurar3();
+                     JanelaInternaPrincipal.add(cf);
+                     cf.setVisible(true);*/
                 }
             }
         }
