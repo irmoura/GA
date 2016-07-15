@@ -84,6 +84,7 @@ public class Tela extends javax.swing.JFrame {
     public String arquivo = "CONFIG3";
     
     public MenuConfigurar3 cf;
+    public MenuSobre about;
    
     /**
      * Creates new form Tela
@@ -91,6 +92,7 @@ public class Tela extends javax.swing.JFrame {
     public Tela() {  
         initComponents();
         cf = new MenuConfigurar3();
+        about = new MenuSobre();
     }
     
     public void inicioVisibilidadeBotoes(Boolean t1, Boolean t2, Boolean t3, Boolean t4, Boolean t5){
@@ -267,6 +269,11 @@ public class Tela extends javax.swing.JFrame {
         jMenuSobre.setText("Ajuda");
 
         jMenuItem2.setText("Sobre");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenuSobre.add(jMenuItem2);
 
         jMenuBar1.add(jMenuSobre);
@@ -1075,6 +1082,12 @@ public class Tela extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jMenuItemConfigurarActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        PAPEL_DE_PAREDE.add(about);
+        about.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments

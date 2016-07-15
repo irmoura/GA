@@ -5,21 +5,20 @@
  */
 package CODIGOS;
 
-
 import java.awt.Dimension;
 
 /**
  *
  * @author Ismael Ribeiro
  */
-public class MenuConfigurar3 extends javax.swing.JInternalFrame {
+public class MenuSobre extends javax.swing.JInternalFrame {
     
     public Dimension dimensao;
 
     /**
-     * Creates new form MenuConfigurar3
+     * Creates new form MenuSobre
      */
-    public MenuConfigurar3() {
+    public MenuSobre() {
         initComponents();
     }
 
@@ -32,8 +31,13 @@ public class MenuConfigurar3 extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+
         setClosable(true);
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        setForeground(new java.awt.Color(0, 0, 0));
+        setTitle("Sobre");
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
@@ -52,6 +56,29 @@ public class MenuConfigurar3 extends javax.swing.JInternalFrame {
             }
         });
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Programa desenvolvido em java com o objetivo\nde gerenciar atendimentos.\n\nAutor: Ismael Ribeiro Moura.\nEmail: coragethedogcowardle@gmail.com\nContatos: (85) 98934-0278 / 99791-4599");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 374, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -63,5 +90,7 @@ public class MenuConfigurar3 extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
