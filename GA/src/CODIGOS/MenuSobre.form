@@ -60,7 +60,7 @@
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Programa desenvolvido em java com o objetivo&#xa;de gerenciar atendimentos.&#xa;&#xa;Autor: Ismael Ribeiro Moura.&#xa;Email: coragethedogcowardle@gmail.com&#xa;Contatos: (85) 98934-0278 / 99791-4599"/>
+            <Property name="text" type="java.lang.String" value="Programa desenvolvido em java com o objetivo&#xa;de gerenciar atendimentos.&#xa;Autor: Ismael Ribeiro Moura.&#xa;Email: coragethedogcowardle@gmail.com&#xa;Contatos: (85) 98934-0278 / 99791-4599"/>
           </Properties>
         </Component>
       </SubComponents>
