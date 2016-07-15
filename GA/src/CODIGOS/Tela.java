@@ -82,12 +82,15 @@ public class Tela extends javax.swing.JFrame {
     public int horas_int;
     
     public String arquivo = "CONFIG3";
+    
+    public MenuConfigurar3 cf;
    
     /**
      * Creates new form Tela
      */
-    public Tela() {
+    public Tela() {  
         initComponents();
+        cf = new MenuConfigurar3();
     }
     
     public void inicioVisibilidadeBotoes(Boolean t1, Boolean t2, Boolean t3, Boolean t4, Boolean t5){
@@ -1066,9 +1069,8 @@ public class Tela extends javax.swing.JFrame {
                 
                 }else
                 if(QDT == 3){
-                     /*MenuConfigurar3 cf = new MenuConfigurar3();
-                     JanelaInternaPrincipal.add(cf);
-                     cf.setVisible(true);*/
+                     PAPEL_DE_PAREDE.add(cf);
+                     cf.setVisible(true);
                 }
             }
         }

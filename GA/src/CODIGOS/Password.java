@@ -10,5 +10,5 @@ package CODIGOS;
  * @author Ibyte
  */
 public class Password {
-    public static String senha = "CP1318RMKLZ";
+    public static String senha = "1";
 }
