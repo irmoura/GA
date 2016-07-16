@@ -60,6 +60,8 @@ public class MenuSobre extends javax.swing.JInternalFrame {
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setText("Programa desenvolvido em java com o objetivo\nde gerenciar atendimentos.\nAutor: Ismael Ribeiro Moura.\nEmail: coragethedogcowardle@gmail.com\nContatos: (85) 98934-0278 / 99791-4599");
+        jTextArea1.setBorder(null);
+        jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

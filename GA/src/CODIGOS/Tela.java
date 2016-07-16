@@ -1073,11 +1073,12 @@ public class Tela extends javax.swing.JFrame {
             else
             {
                 if(QDT == 5){
-                
+                    JOptionPane.showMessageDialog(null,"A função solicitada ainda está sendo desenvolvida.","Aviso",JOptionPane.WARNING_MESSAGE);
                 }else
                 if(QDT == 3){
-                     PAPEL_DE_PAREDE.add(cf);
-                     cf.setVisible(true);
+                     /*PAPEL_DE_PAREDE.add(cf);
+                     cf.setVisible(true);*/
+                     JOptionPane.showMessageDialog(null,"A função solicitada ainda está sendo desenvolvida.","Aviso",JOptionPane.WARNING_MESSAGE);
                 }
             }
         }

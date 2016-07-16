@@ -61,6 +61,12 @@
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
             <Property name="text" type="java.lang.String" value="Programa desenvolvido em java com o objetivo&#xa;de gerenciar atendimentos.&#xa;Autor: Ismael Ribeiro Moura.&#xa;Email: coragethedogcowardle@gmail.com&#xa;Contatos: (85) 98934-0278 / 99791-4599"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Cursor em Forma de Cruz"/>
+            </Property>
           </Properties>
         </Component>
       </SubComponents>
