@@ -293,12 +293,12 @@ public class Tela extends javax.swing.JFrame {
         QDT = Integer.parseInt(PSL1[0]);
         
         if(QDT == 3){
-        /*HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
+        HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
         MCT1 = Integer.parseInt(PSL2[3]);//Minuto chegada Técnico 1
         HST1 = Integer.parseInt(PSL2[4]);//Hora Saida Técnico 1
         MST1 = Integer.parseInt(PSL2[5]);//Minuto Saida Técnico 1
         ET1 = PSL2[6];//Entrada Técnico 1
-        ST1 = PSL2[7];//Saida Técnico 1*/
+        ST1 = PSL2[7];//Saida Técnico 1
         
         for(int i=0; i < TEC1.length; i++){ TEC1[i] = PSL2[i]; }
         
