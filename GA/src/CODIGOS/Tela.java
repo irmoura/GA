@@ -86,7 +86,7 @@ public class Tela extends javax.swing.JFrame {
     public MenuConfigurar3 cf;
     public MenuSobre about;
     
-    public String[] TEC1 = new String[8];
+    //public String[] TEC1 = new String[8];
    
     /**
      * Creates new form Tela
@@ -300,7 +300,8 @@ public class Tela extends javax.swing.JFrame {
         ET1 = PSL2[6];//Entrada Técnico 1
         ST1 = PSL2[7];//Saida Técnico 1
         
-        for(int i=0; i < TEC1.length; i++){ TEC1[i] = PSL2[i]; }
+        //for(int i=0; i < TEC1.length; i++){ TEC1[i] = PSL2[i]; }
+        //System.arraycopy(PSL2, 0, TEC1, 0, TEC1.length);
         
         HCT2 = Integer.parseInt(PSL3[2]);//Hora Chegada Técnico 2
         MCT2 = Integer.parseInt(PSL3[3]);//Minuto Chegada Técnico 2
@@ -419,7 +420,7 @@ public class Tela extends javax.swing.JFrame {
             if(QDT == 5){
                 ////////////////////////////////////////////////////////////////////
             /*TÉCNICOS HABILITADOS NA HORA E MINUTO DEFINIDOS*/
-            if(horas.equals(TEC1[6])){
+            if(horas.equals(ET1)){
                 BTN1.setEnabled(true);
                 BTN1.setSelected(false);
                 BTN1.setForeground(Color.black);
@@ -475,7 +476,7 @@ public class Tela extends javax.swing.JFrame {
             if(QDT == 3){
                     ////////////////////////////////////////////////////////////////////
             /*TÉCNICOS HABILITADOS NA HORA E MINUTO DEFINIDOS*/
-            if(horas.equals(TEC1[6])){
+            if(horas.equals(ET1)){
                 BTN2.setEnabled(true);
                 BTN2.setSelected(false);
                 BTN2.setForeground(Color.black);
@@ -492,7 +493,7 @@ public class Tela extends javax.swing.JFrame {
             }
                 ////////////////////////////////////////////////////////////////////
             /*TÉCNICOS DESABILITADOS NA HORA E MINUTO DEFINIDOS*/
-            if(horas.equals(TEC1[7])){
+            if(horas.equals(ST1)){
                 BTN2.setEnabled(false);
                 BTN2.setSelected(true);
                 BTN2.setForeground(Color.red);
@@ -521,7 +522,7 @@ public class Tela extends javax.swing.JFrame {
         inicioVisibilidadeBotoes(false, true, true, true, false);
         
         /*DEFINE O NOME DOS TÉCNICOS*/
-        inicioNomeBotoes("", TEC1[0], PSL3[0], PSL4[0], "");
+        inicioNomeBotoes("", PSL2[0], PSL3[0], PSL4[0], "");
         
         /*DEFINE SE O BOTAO INICIARÁ HABILITADO*/
         BTN1.setEnabled(false);
