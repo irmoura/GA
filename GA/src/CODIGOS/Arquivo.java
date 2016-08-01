@@ -139,7 +139,24 @@ public class Arquivo {
                     PSL6[j] = s[j];
                 }
         }
+        }///////////
+        /////////////////
+        /*CASO USAR PARA 4 TECNICOS*/
+        if(linhas.length == 6){
+            for(int i = 0; i < (qtdLinha+1); i++){
+                linha = linhas[4];
+                linha = linha.replace(" ",";");
+                String[] s = linha.split(";");
+            
+                PSL5 = new String[s.length];
+        
+                for(int j = 0; j < s.length; j++){
+                    PSL5[j] = s[j];
+                }
         }
+        /////////////////
+        
+        }///////////
         
       
     }

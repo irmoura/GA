@@ -81,7 +81,7 @@ public class Tela extends javax.swing.JFrame {
     public int minutos_int;
     public int horas_int;
     
-    public String arquivo = "CONFIG3";
+    public String arquivo = "CONFIG4";
     
     public MenuConfigurar3 cf;
     public MenuSobre about;
@@ -285,7 +285,7 @@ public class Tela extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
         Arquivo.ler(arquivo);
@@ -317,6 +317,41 @@ public class Tela extends javax.swing.JFrame {
         ET3 = PSL4[6];//Entrada Técnico 3
         ST3 = PSL4[7];//Saida Técnico 3
         }
+        ////////////////////////////////////////////////////////////////////////
+        if(QDT == 4){
+        HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
+        MCT1 = Integer.parseInt(PSL2[3]);//Minuto chegada Técnico 1
+        HST1 = Integer.parseInt(PSL2[4]);//Hora Saida Técnico 1
+        MST1 = Integer.parseInt(PSL2[5]);//Minuto Saida Técnico 1
+        ET1 = PSL2[6];//Entrada Técnico 1
+        ST1 = PSL2[7];//Saida Técnico 1
+        
+        //for(int i=0; i < TEC1.length; i++){ TEC1[i] = PSL2[i]; }
+        //System.arraycopy(PSL2, 0, TEC1, 0, TEC1.length);
+        
+        HCT2 = Integer.parseInt(PSL3[2]);//Hora Chegada Técnico 2
+        MCT2 = Integer.parseInt(PSL3[3]);//Minuto Chegada Técnico 2
+        HST2 = Integer.parseInt(PSL3[4]);//Hora Saida Técnico 2
+        MST2 = Integer.parseInt(PSL3[5]);//Minuto Saida Técnico 2
+        ET2 = PSL3[6];//Entrada Técnico 2
+        ST2 = PSL3[7];//Saida Técnico 2
+        
+        HCT3 = Integer.parseInt(PSL4[2]);//Hora Chegada Técnico 3
+        MCT3 = Integer.parseInt(PSL4[3]);//Minuto Chegada Técnico 3
+        HST3 = Integer.parseInt(PSL4[4]);//Hora Saida Técnico 3
+        MST3 = Integer.parseInt(PSL4[5]);//Minuto Saida Técnico 3
+        ET3 = PSL4[6];//Entrada Técnico 3
+        ST3 = PSL4[7];//Saida Técnico 3
+        
+        HCT4 = Integer.parseInt(PSL5[2]);//Hora Chegada Técnico 4
+        MCT4 = Integer.parseInt(PSL5[3]);//Minuto Chegada Técnico 4
+        HST4 = Integer.parseInt(PSL5[4]);//Hora Saida Técnico 4
+        MST4 = Integer.parseInt(PSL5[5]);//Minuto Saida Técnico 4
+        ET4 = PSL5[6];//Entrada Técnico 4
+        ST4 = PSL5[7];//Saida Técnico 4
+        
+        }
+        ////////////////////////////////////////////////////////////////////////
         if(QDT == 5){
         HCT1 = Integer.parseInt(PSL2[2]);//Hora Chegada Técnico 1
         MCT1 = Integer.parseInt(PSL2[3]);//Minuto chegada Técnico 1
@@ -472,7 +507,54 @@ public class Tela extends javax.swing.JFrame {
                 BTN5.setSelected(true);
                 BTN5.setForeground(Color.red);
             }
+            }///////////////////////////////////////////////////////////////////
+            if(QDT == 4){
+                ////////////////////////////////////////////////////////////////////
+            /*TÉCNICOS HABILITADOS NA HORA E MINUTO DEFINIDOS*/
+            if(horas.equals(ET1)){
+                BTN1.setEnabled(true);
+                BTN1.setSelected(false);
+                BTN1.setForeground(Color.black);
             }
+            if(horas.equals(ET2)){
+                BTN2.setEnabled(true);
+                BTN2.setSelected(false);
+                BTN2.setForeground(Color.black);
+            }
+            if(horas.equals(ET3)){
+                BTN3.setEnabled(true);
+                BTN3.setSelected(false);
+                BTN3.setForeground(Color.black);
+            }
+            if(horas.equals(ET4)){
+                BTN4.setEnabled(true);
+                BTN4.setSelected(false);
+                BTN4.setForeground(Color.black);
+            }
+                ////////////////////////////////////////////////////////////////////
+            /*TÉCNICOS DESABILITADOS NA HORA E MINUTO DEFINIDOS*/
+            if(horas.equals(ST1)){
+                BTN1.setEnabled(false);
+                BTN1.setSelected(true);
+                BTN1.setForeground(Color.red);
+            }
+            if(horas.equals(ST2)){
+                BTN2.setEnabled(false);
+                BTN2.setSelected(true);
+                BTN2.setForeground(Color.red);
+            }
+            if(horas.equals(ST3)){
+                BTN3.setEnabled(false);
+                BTN3.setSelected(true);
+                BTN3.setForeground(Color.red);
+            }
+            if(horas.equals(ST4)){
+                BTN4.setEnabled(false);
+                BTN4.setSelected(true);
+                BTN4.setForeground(Color.red);
+            }
+            
+            }///////////////////////////////////////////////////////////////////
             if(QDT == 3){
                     ////////////////////////////////////////////////////////////////////
             /*TÉCNICOS HABILITADOS NA HORA E MINUTO DEFINIDOS*/
@@ -691,6 +773,97 @@ public class Tela extends javax.swing.JFrame {
         }
         
         }
+        ////////////////////////////////////////////////////////////////////////
+        else
+        if(QDT == 4){
+        
+        /*DEFINE SE O BOTAO INICIARÁ VISIVEL*/
+        inicioVisibilidadeBotoes(true, true, true, true, false);
+        
+        /*DEFINE O NOME DOS TÉCNICOS*/
+        inicioNomeBotoes(PSL2[0], PSL3[0], PSL4[0], PSL5[0], "");
+        
+        /*DEFINE SE O BOTAO INICIARÁ HABILITADO*/
+        BTN1.setEnabled(true);
+        BTN2.setEnabled(true);
+        BTN3.setEnabled(true);
+        BTN4.setEnabled(true);
+        BTN5.setEnabled(false);
+        
+         ////////////////////////////////////////////////////////////////////////
+        /*DEPOIS DO HORARIO DE CHEGADA O BOTAO INICIA HABILITADO*/
+        if((hora >= HCT1 && minuto >= MCT1) ||
+           (hora > HCT1)){
+            BTN1.setSelected(false);
+            BTN1.setForeground(Color.black);
+        }
+        if((hora >= HCT2 && minuto >= MCT2) ||
+           (hora > HCT2)){
+            BTN2.setSelected(false);
+            BTN2.setForeground(Color.black);
+        }
+        if((hora >= HCT3 && minuto >= MCT3) ||
+           (hora > HCT3)){
+            BTN3.setSelected(false);
+            BTN3.setForeground(Color.black);
+        }
+        if((hora >= HCT4 && minuto >= MCT4) ||
+           (hora > HCT4)){
+            BTN4.setSelected(false);
+            BTN4.setForeground(Color.black);
+        }
+        
+        /*ANTES DO HORARIO O BOTAO INICIA DESABILITADO*/
+        if(hora < HCT1 || hora == HCT1 && minuto < MCT1){
+            BTN1.setEnabled(false);
+            BTN1.setSelected(true);
+            BTN1.setForeground(Color.red);
+            BTN1.setText(""+PSL2[0]);
+        }
+        if(hora < HCT2 || hora == HCT2 && minuto < MCT2){
+            BTN2.setEnabled(false);
+            BTN2.setSelected(true);
+            BTN2.setForeground(Color.red);
+            BTN2.setText(""+PSL3[0]);
+        }
+        if(hora < HCT3 || hora == HCT3 && minuto < MCT3){
+            BTN3.setEnabled(false);
+            BTN3.setSelected(true);
+            BTN3.setForeground(Color.red);
+            BTN3.setText(""+PSL4[0]);
+        }
+        if(hora < HCT4 || hora == HCT4 && minuto < MCT4){
+            BTN4.setEnabled(false);
+            BTN4.setSelected(true);
+            BTN4.setForeground(Color.red);
+            BTN4.setText(""+PSL5[0]);
+        }
+        
+         ////////////////////////////////////////////////////////////////////////
+        /*DEPOIS DO HORARIO DE SAIDA O BOTAO INICIA DESABILITADO ||||| */
+        if(hora == HST1 && minuto == MST1 || hora == HST1 && minuto >  MST1 || hora > HST1){
+            BTN1.setEnabled(false);
+            BTN1.setSelected(true);
+            BTN1.setForeground(Color.red);
+        }
+        if(hora == HST2 && minuto == MST2 || hora == HST2 && minuto >  MST2 || hora > HST2){
+            BTN2.setEnabled(false);
+            BTN2.setSelected(true);
+            BTN2.setForeground(Color.red);
+        }
+        if(hora == HST3 && minuto == MST3 || hora == HST3 && minuto >  MST3 || hora > HST3){
+            BTN3.setEnabled(false);
+            BTN3.setSelected(true);
+            BTN3.setForeground(Color.red);
+        }
+        if(hora == HST4 && minuto == MST4 || hora == HST4 && minuto >  MST4 || hora > HST4){
+            BTN4.setEnabled(false);
+            BTN4.setSelected(true);
+            BTN4.setForeground(Color.red);
+        }
+        
+        
+        }///////////////////////////////////////////////////////////////////////
         
     }//GEN-LAST:event_formWindowOpened
 
@@ -743,6 +916,21 @@ public class Tela extends javax.swing.JFrame {
                 BTN3.setText(""+PSL4[0]);
                 BTN4.setText(""+PSL5[0]);
                 BTN5.setText(""+PSL6[0]);
+                BOTAO_ZERAR.setEnabled(false);
+                }else
+                if(QDT == 4){
+                v = 0;
+                TDA = 0;
+                AT1 = 0;
+                AT2 = 0;
+                AT3 = 0;
+                AT4 = 0;
+                TEXTO_TOTAL.setText("Atendimentos : ");
+                TEXTO_NOME_DA_VEZ.setText("");
+                BTN1.setText(""+PSL2[0]);
+                BTN2.setText(""+PSL3[0]);
+                BTN3.setText(""+PSL4[0]);
+                BTN4.setText(""+PSL5[0]);
                 BOTAO_ZERAR.setEnabled(false);
                 }else
                 if(QDT == 3){
@@ -903,6 +1091,150 @@ public class Tela extends javax.swing.JFrame {
                                PSL5[0]+" = "+AT4,
                                PSL6[0]+" = "+AT5);*/
         }else
+            
+        /**********************************************************************/
+            
+        if(QDT == 4){
+            
+        BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
+        
+        v++;//A cada clique incrementa +1
+
+        ////////////////////////////////////////////////////////////////////////
+        /*SE NENHUM BOTAO ESTIVER HABILITADO*/
+        if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && BTN5.isSelected()) || 
+          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && !BTN5.isEnabled())){
+            JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 5° TÉCNICO ESTIVER HABILITADO*/
+        if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && !BTN5.isSelected()) || 
+          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && BTN5.isEnabled())){
+            v = 5;
+        }
+        if(v == 1 && (BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && !BTN5.isSelected()) || 
+          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && BTN5.isEnabled())){
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL6[0]+" - "+PSL6[1]);
+            AT5++;
+            BTN5.setText(PSL6[0]+" - "+AT5);
+            TDA++;
+            
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 2º O 3º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
+        if(v == 5 && !BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
+            v = v - 4;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 3º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
+        if(v == 5 && BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
+            v = v - 3;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 2º E O 3º TÉCNICO ESTIVEREM HABILITADOS*/
+        if(v == 4 && !BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
+            v = v - 2;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 2º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
+        if(v == 5 && !BTN2.isSelected() && BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
+            v = v - 3;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*NA VEZ DO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
+        if(v == 1 && BTN1.isSelected() || v == 1 && !BTN1.isEnabled()){
+            v++;
+        }
+        if(v == 2 && BTN2.isSelected() || v == 2 && !BTN2.isEnabled()){
+            v++;
+        }
+        if(v == 3 && BTN3.isSelected() || v == 3 && !BTN3.isEnabled()){
+            v++;
+        }
+        if(v == 4 && BTN4.isSelected() || v == 4 && !BTN4.isEnabled()){
+            v++;
+        }
+        if(v == 5 && BTN5.isSelected() || v == 5 && !BTN3.isEnabled()){
+            v=1;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 2º TÉCNICO ESTIVER HABILITADO*/
+        if(BTN1.isSelected() && BTN3.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
+            v=2;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 3º TÉCNICO ESTIVER HABILITADO*/
+        if(BTN1.isSelected() && BTN2.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
+            v=3;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*SE APENAS O 4º TÉCNICO ESTIVER HABILITADO*/
+        if(BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN5.isSelected()){
+            v=4;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*NA VEZ DO TÉCNICO E O MESMO ESTIVER HABILITADO*/
+        if(v == 1 && !BTN1.isSelected()){
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL2[0]+" - "+PSL2[1]);
+            AT1++;
+            BTN1.setText(PSL2[0]+" - "+AT1);
+            TDA++;
+            
+        }
+        if(v == 2 && !BTN2.isSelected()){
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL3[0]+" - "+PSL3[1]);
+            AT2++;
+            BTN2.setText(PSL3[0]+" - "+AT2);
+            TDA++;
+            
+        }
+        if(v == 3 && !BTN3.isSelected()){ 
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL4[0]+" - "+PSL4[1]);
+            AT3++;
+            BTN3.setText(PSL4[0]+" - "+AT3);
+            TDA++;
+            
+        }
+        if(v == 4 && !BTN4.isSelected()){ 
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL5[0]+" - "+PSL5[1]);
+            AT4++;
+            BTN4.setText(PSL5[0]+" - "+AT4);
+            TDA++;
+            
+        }
+        if(v == 5 && !BTN5.isSelected()){ 
+            
+            TEXTO_NOME_DA_VEZ.setText(PSL6[0]+" - "+PSL6[1]);
+            AT5++;
+            BTN5.setText(PSL6[0]+" - "+AT5);
+            TDA++;
+            
+            v = 0;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /*NA VEZ DO ÚLTIMO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
+        if(v == 5 && BTN5.isSelected() || v == 5 && !BTN5.isEnabled()){
+            v = 0;
+        }
+        ////////////////////////////////////////////////////////////////////////
+        TEXTO_TOTAL.setText("Atendimentos : "+TDA);
+        
+        /*Codigos.Arquivo.gravar("Total de atendimentos: "+TDA,
+                               PSL2[0]+" = "+AT1,
+                               PSL3[0]+" = "+AT2,
+                               PSL4[0]+" = "+AT3,
+                               PSL5[0]+" = "+AT4,
+                               PSL6[0]+" = "+AT5);*/
+        }else
+            
+        /**********************************************************************/
+            
+            
         if(QDT == 3){
         
         BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
@@ -1077,10 +1409,15 @@ public class Tela extends javax.swing.JFrame {
             }
             else
             {
-                if(QDT == 5){
+                if(QDT == 3){
                     JOptionPane.showMessageDialog(null,"A função solicitada ainda está sendo desenvolvida.","Aviso",JOptionPane.WARNING_MESSAGE);
                 }else
-                if(QDT == 3){
+                if(QDT == 4){
+                     /*PAPEL_DE_PAREDE.add(cf);
+                     cf.setVisible(true);*/
+                     JOptionPane.showMessageDialog(null,"A função solicitada ainda está sendo desenvolvida.","Aviso",JOptionPane.WARNING_MESSAGE);
+                }else
+                if(QDT == 5){
                      /*PAPEL_DE_PAREDE.add(cf);
                      cf.setVisible(true);*/
                      JOptionPane.showMessageDialog(null,"A função solicitada ainda está sendo desenvolvida.","Aviso",JOptionPane.WARNING_MESSAGE);
