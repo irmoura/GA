@@ -1230,6 +1230,7 @@ public class Tela extends javax.swing.JFrame {
                                PSL4[0]+" = "+AT3,
                                PSL5[0]+" = "+AT4,
                                PSL6[0]+" = "+AT5);*/
+            
         }else
             
         /**********************************************************************/
