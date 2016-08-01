@@ -1102,8 +1102,8 @@ public class Tela extends javax.swing.JFrame {
 
         ////////////////////////////////////////////////////////////////////////
         /*SE NENHUM BOTAO ESTIVER HABILITADO*/
-        if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && BTN5.isSelected()) || 
-          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && !BTN5.isEnabled())){
+        if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected()) || 
+          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled())){
             JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
         }
         ////////////////////////////////////////////////////////////////////////
