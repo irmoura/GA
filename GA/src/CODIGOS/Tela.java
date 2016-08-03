@@ -1106,41 +1106,20 @@ public class Tela extends javax.swing.JFrame {
           (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled())){
             JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
         }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 5° TÉCNICO ESTIVER HABILITADO*/
-        if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && !BTN5.isSelected()) || 
-          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && BTN5.isEnabled())){
-            v = 5;
+        
+        /*SE APENAS O 2º TÉCNICO ESTIVER HABILITADO*/
+        if(BTN1.isSelected() && BTN3.isSelected() && BTN4.isSelected()){
+            v=2;
         }
-        if(v == 1 && (BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && !BTN5.isSelected()) || 
-          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && BTN5.isEnabled())){
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL6[0]+" - "+PSL6[1]);
-            AT5++;
-            BTN5.setText(PSL6[0]+" - "+AT5);
-            TDA++;
-            
+        /*SE APENAS O 3º TÉCNICO ESTIVER HABILITADO*/
+        if(BTN1.isSelected() && BTN2.isSelected() && BTN4.isSelected()){
+            v=3;
         }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 2º O 3º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
-        if(v == 5 && !BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
-            v = v - 4;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 3º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
-        if(v == 5 && BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
-            v = v - 3;
-        }
-        ////////////////////////////////////////////////////////////////////////
         /*SE APENAS O 2º E O 3º TÉCNICO ESTIVEREM HABILITADOS*/
-        if(v == 4 && !BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
+        if(v == 4 && !BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && BTN4.isSelected()){
             v = v - 2;
         }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 2º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
-        if(v == 5 && !BTN2.isSelected() && BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
-            v = v - 3;
-        }
+        
         ////////////////////////////////////////////////////////////////////////
         /*NA VEZ DO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
         if(v == 1 && BTN1.isSelected() || v == 1 && !BTN1.isEnabled()){
@@ -1153,26 +1132,9 @@ public class Tela extends javax.swing.JFrame {
             v++;
         }
         if(v == 4 && BTN4.isSelected() || v == 4 && !BTN4.isEnabled()){
-            v++;
-        }
-        if(v == 5 && BTN5.isSelected() || v == 5 && !BTN3.isEnabled()){
             v=1;
         }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 2º TÉCNICO ESTIVER HABILITADO*/
-        if(BTN1.isSelected() && BTN3.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
-            v=2;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 3º TÉCNICO ESTIVER HABILITADO*/
-        if(BTN1.isSelected() && BTN2.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
-            v=3;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 4º TÉCNICO ESTIVER HABILITADO*/
-        if(BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN5.isSelected()){
-            v=4;
-        }
+
         ////////////////////////////////////////////////////////////////////////
         /*NA VEZ DO TÉCNICO E O MESMO ESTIVER HABILITADO*/
         if(v == 1 && !BTN1.isSelected()){
@@ -1205,20 +1167,12 @@ public class Tela extends javax.swing.JFrame {
             AT4++;
             BTN4.setText(PSL5[0]+" - "+AT4);
             TDA++;
-            
+            v=0;
         }
-        if(v == 5 && !BTN5.isSelected()){ 
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL6[0]+" - "+PSL6[1]);
-            AT5++;
-            BTN5.setText(PSL6[0]+" - "+AT5);
-            TDA++;
-            
-            v = 0;
-        }
+        
         ////////////////////////////////////////////////////////////////////////
         /*NA VEZ DO ÚLTIMO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
-        if(v == 5 && BTN5.isSelected() || v == 5 && !BTN5.isEnabled()){
+        if(v == 4 && BTN4.isSelected() || v == 4 && !BTN4.isEnabled()){
             v = 0;
         }
         ////////////////////////////////////////////////////////////////////////
