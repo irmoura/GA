@@ -173,6 +173,9 @@ public class Tela extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BTN1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BTN1MouseEntered(evt);
+            }
         });
         JanelaInternaPrincipal.add(BTN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 370, -1, -1));
 
@@ -183,6 +186,9 @@ public class Tela extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BTN2MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BTN2MouseEntered(evt);
+            }
         });
         JanelaInternaPrincipal.add(BTN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, -1, -1));
 
@@ -192,6 +198,9 @@ public class Tela extends javax.swing.JFrame {
         BTN3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BTN3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BTN3MouseEntered(evt);
             }
         });
         JanelaInternaPrincipal.add(BTN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
@@ -204,6 +213,9 @@ public class Tela extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BTN4MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BTN4MouseEntered(evt);
+            }
         });
         JanelaInternaPrincipal.add(BTN4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
 
@@ -213,6 +225,9 @@ public class Tela extends javax.swing.JFrame {
         BTN5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BTN5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BTN5MouseEntered(evt);
             }
         });
         JanelaInternaPrincipal.add(BTN5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, -1, -1));
@@ -1386,6 +1401,31 @@ public class Tela extends javax.swing.JFrame {
         PAPEL_DE_PAREDE.add(about);
         about.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void BTN1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN1MouseEntered
+        // TODO add your handling code here:
+        BTN1.setToolTipText(ET1+" às "+ST1);
+    }//GEN-LAST:event_BTN1MouseEntered
+
+    private void BTN2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN2MouseEntered
+        // TODO add your handling code here:
+        BTN2.setToolTipText(ET2+" às "+ST2);
+    }//GEN-LAST:event_BTN2MouseEntered
+
+    private void BTN3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN3MouseEntered
+        // TODO add your handling code here:
+        BTN3.setToolTipText(ET3+" às "+ST3);
+    }//GEN-LAST:event_BTN3MouseEntered
+
+    private void BTN4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN4MouseEntered
+        // TODO add your handling code here:
+        BTN4.setToolTipText(ET4+" às "+ST4);
+    }//GEN-LAST:event_BTN4MouseEntered
+
+    private void BTN5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN5MouseEntered
+        // TODO add your handling code here:
+        BTN5.setToolTipText(ET5+" às "+ST5);
+    }//GEN-LAST:event_BTN5MouseEntered
 
     /**
      * @param args the command line arguments

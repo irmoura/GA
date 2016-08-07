@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -62,7 +63,9 @@ public class Arquivo {
             }
             
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Arquivo.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Arquivo.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"O arquivo "+arquivo+" não existe.","Arquivo Não Econtrado",JOptionPane.WARNING_MESSAGE);
+            System.exit(0);
         }
       
       /////////////////
@@ -112,37 +115,29 @@ public class Arquivo {
                 for(int j = 0; j < s.length; j++){
                     PSL4[j] = s[j];
                 }
-        }
-        /////////////////
-        /*CASO USAR PARA 5 TECNICOS*/
-        if(linhas.length == 7){
+}
+        if(linhas.length == 7){/*CASO USAR PARA 5 TECNICOS*/
             for(int i = 0; i < (qtdLinha+1); i++){
                 linha = linhas[4];
                 linha = linha.replace(" ",";");
                 String[] s = linha.split(";");
-            
                 PSL5 = new String[s.length];
-        
                 for(int j = 0; j < s.length; j++){
                     PSL5[j] = s[j];
-                }
-        }
-        /////////////////
+    }
+}
         for(int i = 0; i < (qtdLinha+1); i++){
-                linha = linhas[5];
-                linha = linha.replace(" ",";");
-                String[] s = linha.split(";");
-            
-                PSL6 = new String[s.length];
+            linha = linhas[5];
+            linha = linha.replace(" ",";");
+            String[] s = linha.split(";");
+            PSL6 = new String[s.length];
         
-                for(int j = 0; j < s.length; j++){
-                    PSL6[j] = s[j];
-                }
+        for(int j = 0; j < s.length; j++){
+            PSL6[j] = s[j];
         }
-        }///////////
-        /////////////////
-        /*CASO USAR PARA 4 TECNICOS*/
-        if(linhas.length == 6){
+    }
+}
+        if(linhas.length == 6){/*CASO USAR PARA 4 TECNICOS*/
             for(int i = 0; i < (qtdLinha+1); i++){
                 linha = linhas[4];
                 linha = linha.replace(" ",";");
@@ -153,11 +148,7 @@ public class Arquivo {
                 for(int j = 0; j < s.length; j++){
                     PSL5[j] = s[j];
                 }
-        }
-        /////////////////
-        
-        }///////////
-        
-      
+            }        
+        }       
     }
 }
