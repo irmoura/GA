@@ -15,6 +15,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.util.Calendar;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.Timer;
 
 /**
@@ -81,7 +82,7 @@ public class Tela extends javax.swing.JFrame {
     public int minutos_int;
     public int horas_int;
     
-    public String arquivo = "CONFIG4";
+    public String arquivo = "CONFIG3";
     
     public MenuConfigurar3 cf;
     public MenuSobre about;
@@ -969,329 +970,277 @@ public class Tela extends javax.swing.JFrame {
     private void PAPEL_DE_PAREDEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PAPEL_DE_PAREDEMouseClicked
         // TODO add your handling code here:
         
-        if(QDT == 5){
-            
-        BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
+        JPasswordField jpf = new JPasswordField();
         
-        v++;//A cada clique incrementa +1
-
-        ////////////////////////////////////////////////////////////////////////
-        /*SE NENHUM BOTAO ESTIVER HABILITADO*/
-        if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && BTN5.isSelected()) || 
-          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && !BTN5.isEnabled())){
-            JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 5° TÉCNICO ESTIVER HABILITADO*/
-        if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && !BTN5.isSelected()) || 
-          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && BTN5.isEnabled())){
-            v = 5;
-        }
-        if(v == 1 && (BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && !BTN5.isSelected()) || 
-          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && BTN5.isEnabled())){
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL6[0]+" - "+PSL6[1]);
-            AT5++;
-            BTN5.setText(PSL6[0]+" - "+AT5);
-            TDA++;
-            
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 2º O 3º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
-        if(v == 5 && !BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
-            v = v - 4;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 3º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
-        if(v == 5 && BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
-            v = v - 3;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 2º E O 3º TÉCNICO ESTIVEREM HABILITADOS*/
-        if(v == 4 && !BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
-            v = v - 2;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 2º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
-        if(v == 5 && !BTN2.isSelected() && BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
-            v = v - 3;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*NA VEZ DO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
-        if(v == 1 && BTN1.isSelected() || v == 1 && !BTN1.isEnabled()){
-            v++;
-        }
-        if(v == 2 && BTN2.isSelected() || v == 2 && !BTN2.isEnabled()){
-            v++;
-        }
-        if(v == 3 && BTN3.isSelected() || v == 3 && !BTN3.isEnabled()){
-            v++;
-        }
-        if(v == 4 && BTN4.isSelected() || v == 4 && !BTN4.isEnabled()){
-            v++;
-        }
-        if(v == 5 && BTN5.isSelected() || v == 5 && !BTN3.isEnabled()){
-            v=1;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 2º TÉCNICO ESTIVER HABILITADO*/
-        if(BTN1.isSelected() && BTN3.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
-            v=2;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 3º TÉCNICO ESTIVER HABILITADO*/
-        if(BTN1.isSelected() && BTN2.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
-            v=3;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 4º TÉCNICO ESTIVER HABILITADO*/
-        if(BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN5.isSelected()){
-            v=4;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*NA VEZ DO TÉCNICO E O MESMO ESTIVER HABILITADO*/
-        if(v == 1 && !BTN1.isSelected()){
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL2[0]+" - "+PSL2[1]);
-            AT1++;
-            BTN1.setText(PSL2[0]+" - "+AT1);
-            TDA++;
-            
-        }
-        if(v == 2 && !BTN2.isSelected()){
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL3[0]+" - "+PSL3[1]);
-            AT2++;
-            BTN2.setText(PSL3[0]+" - "+AT2);
-            TDA++;
-            
-        }
-        if(v == 3 && !BTN3.isSelected()){ 
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL4[0]+" - "+PSL4[1]);
-            AT3++;
-            BTN3.setText(PSL4[0]+" - "+AT3);
-            TDA++;
-            
-        }
-        if(v == 4 && !BTN4.isSelected()){ 
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL5[0]+" - "+PSL5[1]);
-            AT4++;
-            BTN4.setText(PSL5[0]+" - "+AT4);
-            TDA++;
-            
-        }
-        if(v == 5 && !BTN5.isSelected()){ 
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL6[0]+" - "+PSL6[1]);
-            AT5++;
-            BTN5.setText(PSL6[0]+" - "+AT5);
-            TDA++;
-            
-            v = 0;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*NA VEZ DO ÚLTIMO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
-        if(v == 5 && BTN5.isSelected() || v == 5 && !BTN5.isEnabled()){
-            v = 0;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        TEXTO_TOTAL.setText("Atendimentos : "+TDA);
+        JOptionPane.showConfirmDialog(null,new Object[]{ jpf}, "Senha:",JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
         
-        /*Codigos.Arquivo.gravar("Total de atendimentos: "+TDA,
-                               PSL2[0]+" = "+AT1,
-                               PSL3[0]+" = "+AT2,
-                               PSL4[0]+" = "+AT3,
-                               PSL5[0]+" = "+AT4,
-                               PSL6[0]+" = "+AT5);*/
-        }else
-            
+        String senha = new String(jpf.getPassword());
+        
+        if(senha.equals("19216811")){
+            switch (QDT) {
+            case 5:
+                BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
+                v++;//A cada clique incrementa +1
+                ////////////////////////////////////////////////////////////////////////
+                /*SE NENHUM BOTAO ESTIVER HABILITADO*/
+                if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && BTN5.isSelected()) ||
+                        (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && !BTN5.isEnabled())){
+                    JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE APENAS O 5° TÉCNICO ESTIVER HABILITADO*/
+                if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && !BTN5.isSelected()) ||
+                        (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && BTN5.isEnabled())){
+                    v = 5;
+                }       if(v == 1 && (BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && !BTN5.isSelected()) || 
+                        (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && BTN5.isEnabled())){
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL6[0]+" - "+PSL6[1]);
+                    AT5++;
+                    BTN5.setText(PSL6[0]+" - "+AT5);
+                    TDA++;
+                    
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE APENAS O 2º O 3º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
+                if(v == 5 && !BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
+                    v = v - 4;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE APENAS O 3º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
+                if(v == 5 && BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
+                    v = v - 3;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE APENAS O 2º E O 3º TÉCNICO ESTIVEREM HABILITADOS*/
+                if(v == 4 && !BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
+                    v = v - 2;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE APENAS O 2º E O 4º TÉCNICO ESTIVEREM HABILITADOS*/
+                if(v == 5 && !BTN2.isSelected() && BTN3.isSelected() && BTN1.isSelected() && !BTN4.isSelected() && BTN5.isSelected()){
+                    v = v - 3;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*NA VEZ DO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
+                if(v == 1 && BTN1.isSelected() || v == 1 && !BTN1.isEnabled()){
+                    v++;
+                }       if(v == 2 && BTN2.isSelected() || v == 2 && !BTN2.isEnabled()){
+                    v++;
+                }       if(v == 3 && BTN3.isSelected() || v == 3 && !BTN3.isEnabled()){
+                    v++;
+                }       if(v == 4 && BTN4.isSelected() || v == 4 && !BTN4.isEnabled()){
+                    v++;
+                }       if(v == 5 && BTN5.isSelected() || v == 5 && !BTN3.isEnabled()){
+                    v=1;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE APENAS O 2º TÉCNICO ESTIVER HABILITADO*/
+                if(BTN1.isSelected() && BTN3.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
+                    v=2;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE APENAS O 3º TÉCNICO ESTIVER HABILITADO*/
+                if(BTN1.isSelected() && BTN2.isSelected() && BTN4.isSelected() && BTN5.isSelected()){
+                    v=3;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE APENAS O 4º TÉCNICO ESTIVER HABILITADO*/
+                if(BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN5.isSelected()){
+                    v=4;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*NA VEZ DO TÉCNICO E O MESMO ESTIVER HABILITADO*/
+                if(v == 1 && !BTN1.isSelected()){
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL2[0]+" - "+PSL2[1]);
+                    AT1++;
+                    BTN1.setText(PSL2[0]+" - "+AT1);
+                    TDA++;
+                    
+                }       if(v == 2 && !BTN2.isSelected()){
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL3[0]+" - "+PSL3[1]);
+                    AT2++;
+                    BTN2.setText(PSL3[0]+" - "+AT2);
+                    TDA++;
+                    
+                }       if(v == 3 && !BTN3.isSelected()){ 
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL4[0]+" - "+PSL4[1]);
+                    AT3++;
+                    BTN3.setText(PSL4[0]+" - "+AT3);
+                    TDA++;
+                    
+                }       if(v == 4 && !BTN4.isSelected()){ 
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL5[0]+" - "+PSL5[1]);
+                    AT4++;
+                    BTN4.setText(PSL5[0]+" - "+AT4);
+                    TDA++;
+                    
+                }       if(v == 5 && !BTN5.isSelected()){ 
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL6[0]+" - "+PSL6[1]);
+                    AT5++;
+                    BTN5.setText(PSL6[0]+" - "+AT5);
+                    TDA++;
+                    
+                    v = 0;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*NA VEZ DO ÚLTIMO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
+                if(v == 5 && BTN5.isSelected() || v == 5 && !BTN5.isEnabled()){
+                    v = 0;
+                }       ////////////////////////////////////////////////////////////////////////
+                TEXTO_TOTAL.setText("Atendimentos : "+TDA);
+                
+                /*Codigos.Arquivo.gravar("Total de atendimentos: "+TDA,
+                PSL2[0]+" = "+AT1,
+                PSL3[0]+" = "+AT2,
+                PSL4[0]+" = "+AT3,
+                PSL5[0]+" = "+AT4,
+                PSL6[0]+" = "+AT5);*/
+                break;
         /**********************************************************************/
-            
-        if(QDT == 4){
-            
-        BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
-        
-        v++;//A cada clique incrementa +1
-
-        ////////////////////////////////////////////////////////////////////////
-        /*SE NENHUM BOTAO ESTIVER HABILITADO*/
-        if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected()) || 
-          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled())){
-            JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
-        }
-        
-        /*SE APENAS O 2º TÉCNICO ESTIVER HABILITADO*/
-        if(BTN1.isSelected() && BTN3.isSelected() && BTN4.isSelected()){
-            v=2;
-        }
-        /*SE APENAS O 3º TÉCNICO ESTIVER HABILITADO*/
-        if(BTN1.isSelected() && BTN2.isSelected() && BTN4.isSelected()){
-            v=3;
-        }
-        /*SE APENAS O 2º E O 3º TÉCNICO ESTIVEREM HABILITADOS*/
-        if(v == 4 && !BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && BTN4.isSelected()){
-            v = v - 2;
-        }
-        
-        ////////////////////////////////////////////////////////////////////////
-        /*NA VEZ DO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
-        if(v == 1 && BTN1.isSelected() || v == 1 && !BTN1.isEnabled()){
-            v++;
-        }
-        if(v == 2 && BTN2.isSelected() || v == 2 && !BTN2.isEnabled()){
-            v++;
-        }
-        if(v == 3 && BTN3.isSelected() || v == 3 && !BTN3.isEnabled()){
-            v++;
-        }
-        if(v == 4 && BTN4.isSelected() || v == 4 && !BTN4.isEnabled()){
-            v=1;
-        }
-
-        ////////////////////////////////////////////////////////////////////////
-        /*NA VEZ DO TÉCNICO E O MESMO ESTIVER HABILITADO*/
-        if(v == 1 && !BTN1.isSelected()){
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL2[0]+" - "+PSL2[1]);
-            AT1++;
-            BTN1.setText(PSL2[0]+" - "+AT1);
-            TDA++;
-            
-        }
-        if(v == 2 && !BTN2.isSelected()){
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL3[0]+" - "+PSL3[1]);
-            AT2++;
-            BTN2.setText(PSL3[0]+" - "+AT2);
-            TDA++;
-            
-        }
-        if(v == 3 && !BTN3.isSelected()){ 
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL4[0]+" - "+PSL4[1]);
-            AT3++;
-            BTN3.setText(PSL4[0]+" - "+AT3);
-            TDA++;
-            
-        }
-        if(v == 4 && !BTN4.isSelected()){ 
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL5[0]+" - "+PSL5[1]);
-            AT4++;
-            BTN4.setText(PSL5[0]+" - "+AT4);
-            TDA++;
-            v=0;
-        }
-        
-        ////////////////////////////////////////////////////////////////////////
-        /*NA VEZ DO ÚLTIMO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
-        if(v == 4 && BTN4.isSelected() || v == 4 && !BTN4.isEnabled()){
-            v = 0;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        TEXTO_TOTAL.setText("Atendimentos : "+TDA);
-        
-        /*Codigos.Arquivo.gravar("Total de atendimentos: "+TDA,
-                               PSL2[0]+" = "+AT1,
-                               PSL3[0]+" = "+AT2,
-                               PSL4[0]+" = "+AT3,
-                               PSL5[0]+" = "+AT4,
-                               PSL6[0]+" = "+AT5);*/
-            
-        }else
-            
+            case 4:
+                BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
+                v++;//A cada clique incrementa +1
+                ////////////////////////////////////////////////////////////////////////
+                /*SE NENHUM BOTAO ESTIVER HABILITADO*/
+                if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected()) ||
+                        (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled())){
+                    JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
+                }       /*SE APENAS O 2º TÉCNICO ESTIVER HABILITADO*/
+                if(BTN1.isSelected() && BTN3.isSelected() && BTN4.isSelected()){
+                    v=2;
+                }       /*SE APENAS O 3º TÉCNICO ESTIVER HABILITADO*/
+                if(BTN1.isSelected() && BTN2.isSelected() && BTN4.isSelected()){
+                    v=3;
+                }       /*SE APENAS O 2º E O 3º TÉCNICO ESTIVEREM HABILITADOS*/
+                if(v == 4 && !BTN2.isSelected() && !BTN3.isSelected() && BTN1.isSelected() && BTN4.isSelected()){
+                    v = v - 2;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*NA VEZ DO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
+                if(v == 1 && BTN1.isSelected() || v == 1 && !BTN1.isEnabled()){
+                    v++;
+                }       if(v == 2 && BTN2.isSelected() || v == 2 && !BTN2.isEnabled()){
+                    v++;
+                }       if(v == 3 && BTN3.isSelected() || v == 3 && !BTN3.isEnabled()){
+                    v++;
+                }       if(v == 4 && BTN4.isSelected() || v == 4 && !BTN4.isEnabled()){
+                    v=1;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*NA VEZ DO TÉCNICO E O MESMO ESTIVER HABILITADO*/
+                if(v == 1 && !BTN1.isSelected()){
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL2[0]+" - "+PSL2[1]);
+                    AT1++;
+                    BTN1.setText(PSL2[0]+" - "+AT1);
+                    TDA++;
+                    
+                }       if(v == 2 && !BTN2.isSelected()){
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL3[0]+" - "+PSL3[1]);
+                    AT2++;
+                    BTN2.setText(PSL3[0]+" - "+AT2);
+                    TDA++;
+                    
+                }       if(v == 3 && !BTN3.isSelected()){ 
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL4[0]+" - "+PSL4[1]);
+                    AT3++;
+                    BTN3.setText(PSL4[0]+" - "+AT3);
+                    TDA++;
+                    
+                }       if(v == 4 && !BTN4.isSelected()){ 
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL5[0]+" - "+PSL5[1]);
+                    AT4++;
+                    BTN4.setText(PSL5[0]+" - "+AT4);
+                    TDA++;
+                    v=0;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*NA VEZ DO ÚLTIMO TÉCNICO E O MESMO ESTIVER DESABILITADO*/
+                if(v == 4 && BTN4.isSelected() || v == 4 && !BTN4.isEnabled()){
+                    v = 0;
+                }       ////////////////////////////////////////////////////////////////////////
+                TEXTO_TOTAL.setText("Atendimentos : "+TDA);
+                
+                /*Codigos.Arquivo.gravar("Total de atendimentos: "+TDA,
+                PSL2[0]+" = "+AT1,
+                PSL3[0]+" = "+AT2,
+                PSL4[0]+" = "+AT3,
+                PSL5[0]+" = "+AT4,
+                PSL6[0]+" = "+AT5);*/
+                break;
         /**********************************************************************/
-            
-            
-        if(QDT == 3){
-        
-        BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
-        
-        v++;//A cada clique incrementa +1
-        
-        ////////////////////////////////////////////////////////////////////////
-        /*SE NENHUM BOTAO ESTIVER HABILITADO*/
-        if(BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() || 
-          !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled()){
-            JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
+            case 3:
+                BOTAO_ZERAR.setEnabled(true);//Ao primeiro clique habilita o botão zerar
+                v++;//A cada clique incrementa +1
+                ////////////////////////////////////////////////////////////////////////
+                /*SE NENHUM BOTAO ESTIVER HABILITADO*/
+                if(BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() ||
+                        !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled()){
+                    JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE A VEZ FOR DO 1º E O MESMO ESTIVER DESABILITADO*/
+                if(v == 1 && BTN2.isSelected() || v == 1 && !BTN2.isEnabled()){
+                    v++;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE A VEZ FOR DO 2º E O MESMO ESTIVER DESABILITADO*/
+                if(v == 2 && BTN3.isSelected() || v == 2 && !BTN3.isEnabled()){
+                    v++;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE A VEZ FOR DO 3º E O MESMO ESTIVER DESABILITADO*/
+                if(v == 3 && BTN4.isSelected() || v == 3 && !BTN4.isEnabled()){
+                    v=1;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE APENAS O 2º BOTAO ESTIVER HABILITADO*/
+                if(BTN2.isSelected() && BTN4.isSelected()){
+                    v=3;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE A VEZ FOR DO 1º E O MESMO ESTIVER HABILITADO*/
+                if(v == 1 && !BTN2.isSelected()){
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL2[0]+" - "+PSL2[1]);
+                    AT1++;
+                    BTN2.setText(PSL2[0]+" - "+AT1);
+                    TDA++;
+                    
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE A VEZ FOR DO 2º E O MESMO ESTIVER HABILITADO*/
+                if(v == 2 && !BTN3.isSelected()){
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL3[0]+" - "+PSL3[1]);
+                    AT2++;
+                    BTN3.setText(PSL3[0]+" - "+AT2);
+                    TDA++;
+                    
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE A VEZ FOR DO 3º E O MESMO ESTIVER HABILITADO*/
+                if(v == 3 && !BTN4.isSelected()){
+                    
+                    TEXTO_NOME_DA_VEZ.setText(PSL4[0]+" - "+PSL4[1]);
+                    AT3++;
+                    BTN4.setText(PSL4[0]+" - "+AT3);
+                    TDA++;
+                    
+                    v = 0;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE A VEZ FOR DO 3º E O MESMO ESTIVER DESABILITADO*/
+                if(v == 3 && BTN4.isSelected() || v == 3 && !BTN4.isEnabled()){
+                    v = 2;
+                }       ////////////////////////////////////////////////////////////////////////
+                /*SE APENAS O 2º TÉCNICO ESTIVER HABILITADO*/
+                if(BTN4.isSelected() && BTN2.isSelected() && !BTN3.isSelected()){
+                    //JOptionPane.showMessageDialog(null,"iiiiiiii");
+                    TEXTO_NOME_DA_VEZ.setText(PSL3[0]+" - "+PSL3[1]);
+                    AT2++;
+                    BTN3.setText(PSL3[0]+" - "+AT2);
+                    TDA++;
+                    
+                    v = 0;
+                }       ////////////////////////////////////////////////////////////////////////
+                TEXTO_TOTAL.setText("Atendimentos : "+TDA);
+                
+                /*CODIGOS.Arquivo.gravar("Total de atendimentos: "+TDA,
+                PSL2[0]+" = "+AT1,
+                PSL3[0]+" = "+AT2,
+                PSL4[0]+" = "+AT3);*/
+                break;
+            default:
+                break;
         }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE A VEZ FOR DO 1º E O MESMO ESTIVER DESABILITADO*/
-        if(v == 1 && BTN2.isSelected() || v == 1 && !BTN2.isEnabled()){
-            v++;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE A VEZ FOR DO 2º E O MESMO ESTIVER DESABILITADO*/
-        if(v == 2 && BTN3.isSelected() || v == 2 && !BTN3.isEnabled()){
-            v++;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE A VEZ FOR DO 3º E O MESMO ESTIVER DESABILITADO*/
-        if(v == 3 && BTN4.isSelected() || v == 3 && !BTN4.isEnabled()){
-            v=1;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 2º BOTAO ESTIVER HABILITADO*/
-        if(BTN2.isSelected() && BTN4.isSelected()){
-            v=3;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE A VEZ FOR DO 1º E O MESMO ESTIVER HABILITADO*/
-        if(v == 1 && !BTN2.isSelected()){
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL2[0]+" - "+PSL2[1]);
-            AT1++;
-            BTN2.setText(PSL2[0]+" - "+AT1);
-            TDA++;
-            
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE A VEZ FOR DO 2º E O MESMO ESTIVER HABILITADO*/
-        if(v == 2 && !BTN3.isSelected()){
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL3[0]+" - "+PSL3[1]);
-            AT2++;
-            BTN3.setText(PSL3[0]+" - "+AT2);
-            TDA++;
-            
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE A VEZ FOR DO 3º E O MESMO ESTIVER HABILITADO*/
-        if(v == 3 && !BTN4.isSelected()){ 
-            
-            TEXTO_NOME_DA_VEZ.setText(PSL4[0]+" - "+PSL4[1]);
-            AT3++;
-            BTN4.setText(PSL4[0]+" - "+AT3);
-            TDA++;
-            
-            v = 0;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE A VEZ FOR DO 3º E O MESMO ESTIVER DESABILITADO*/
-        if(v == 3 && BTN4.isSelected() || v == 3 && !BTN4.isEnabled()){
-            v = 2;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        /*SE APENAS O 2º TÉCNICO ESTIVER HABILITADO*/
-        if(BTN4.isSelected() && BTN2.isSelected() && !BTN3.isSelected()){
-            //JOptionPane.showMessageDialog(null,"iiiiiiii");
-            TEXTO_NOME_DA_VEZ.setText(PSL3[0]+" - "+PSL3[1]);
-            AT2++;
-            BTN3.setText(PSL3[0]+" - "+AT2);
-            TDA++;
-            
-            v = 0;
-        }
-        ////////////////////////////////////////////////////////////////////////
-        TEXTO_TOTAL.setText("Atendimentos : "+TDA);
-        
-        /*CODIGOS.Arquivo.gravar("Total de atendimentos: "+TDA,
-                               PSL2[0]+" = "+AT1,
-                               PSL3[0]+" = "+AT2,
-                               PSL4[0]+" = "+AT3);*/
-            
         }
         
     }//GEN-LAST:event_PAPEL_DE_PAREDEMouseClicked
@@ -1404,27 +1353,58 @@ public class Tela extends javax.swing.JFrame {
 
     private void BTN1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN1MouseEntered
         // TODO add your handling code here:
-        BTN1.setToolTipText(ET1+" às "+ST1);
+        if(QDT == 5){
+            BTN1.setToolTipText(ET1+" às "+ST1);
+        }
+        if(QDT == 4){
+            BTN1.setToolTipText(ET1+" às "+ST1);
+        }
     }//GEN-LAST:event_BTN1MouseEntered
 
     private void BTN2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN2MouseEntered
         // TODO add your handling code here:
-        BTN2.setToolTipText(ET2+" às "+ST2);
+        if(QDT == 5){
+            BTN2.setToolTipText(ET2+" às "+ST2);
+        }
+        if(QDT == 4){
+            BTN2.setToolTipText(ET2+" às "+ST2);
+        }
+        if(QDT == 3){
+            BTN2.setToolTipText(ET1+" às "+ST1);
+        }
     }//GEN-LAST:event_BTN2MouseEntered
 
     private void BTN3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN3MouseEntered
         // TODO add your handling code here:
-        BTN3.setToolTipText(ET3+" às "+ST3);
+        if(QDT == 5){
+            BTN3.setToolTipText(ET3+" às "+ST3);
+        }
+        if(QDT == 4){
+            BTN3.setToolTipText(ET3+" às "+ST3);
+        }
+        if(QDT == 3){
+            BTN3.setToolTipText(ET2+" às "+ST2);
+        }
     }//GEN-LAST:event_BTN3MouseEntered
 
     private void BTN4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN4MouseEntered
         // TODO add your handling code here:
-        BTN4.setToolTipText(ET4+" às "+ST4);
+        if(QDT == 5){
+            BTN4.setToolTipText(ET4+" às "+ST4);
+        }
+        if(QDT == 4){
+            BTN4.setToolTipText(ET4+" às "+ST4);
+        }
+        if(QDT == 3){
+            BTN4.setToolTipText(ET3+" às "+ST3);
+        }
     }//GEN-LAST:event_BTN4MouseEntered
 
     private void BTN5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN5MouseEntered
         // TODO add your handling code here:
-        BTN5.setToolTipText(ET5+" às "+ST5);
+        if(QDT == 5){
+            BTN5.setToolTipText(ET5+" às "+ST5);
+        }
     }//GEN-LAST:event_BTN5MouseEntered
 
     /**
