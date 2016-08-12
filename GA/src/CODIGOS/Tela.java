@@ -1181,7 +1181,11 @@ public class Tela extends javax.swing.JFrame {
                 if(!senha.equals(password.senha))      
                 {
                     
-                    senha = JOptionPane.showInputDialog(null,"Password: ","Warning "+(i+1)+"ª tentativa.",JOptionPane.OK_CANCEL_OPTION);
+                    JPasswordField jpf = new JPasswordField();
+            
+                    JOptionPane.showConfirmDialog(null,new Object[]{ jpf},"Warning "+(i+1)+"ª tentativa.",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
+        
+                    senha = new String(jpf.getPassword());
                     
                 }    
             }
