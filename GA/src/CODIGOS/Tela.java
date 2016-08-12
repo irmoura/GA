@@ -83,7 +83,9 @@ public class Tela extends javax.swing.JFrame {
     public int horas_int;
     
     public String arquivo = "CONFIG4";
-    public boolean solicitar_senha = false;
+    public String senha_de_chamada = "19216811";
+    public String senha_digitada = "";
+    public boolean solicitar_senha = true;
     
     public MenuConfigurar3 cf;
     public MenuSobre about;
@@ -93,10 +95,13 @@ public class Tela extends javax.swing.JFrame {
     /**
      * Creates new form Tela
      */
-    public Tela() {  
+    public Tela() {
+        
         initComponents();
+        
         cf = new MenuConfigurar3();
         about = new MenuSobre();
+        
     }
     
     public void inicioVisibilidadeBotoes(Boolean t1, Boolean t2, Boolean t3, Boolean t4, Boolean t5){
@@ -524,7 +529,7 @@ public class Tela extends javax.swing.JFrame {
         JanelaInternaPrincipal.add(TEXTO_HORA, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, -1, -1));
 
         TEXTO_DESENVOLVEDOR.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        TEXTO_DESENVOLVEDOR.setText("Desenvolvedor : Ismael Ribeiro                                                                                                                               Versão: 110820162141");
+        TEXTO_DESENVOLVEDOR.setText("Desenvolvedor : Ismael Ribeiro                                                                                                                               Versão: 110820162257");
         JanelaInternaPrincipal.add(TEXTO_DESENVOLVEDOR, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
 
         TEXTO_CRONOMETRO.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -1239,22 +1244,45 @@ public class Tela extends javax.swing.JFrame {
     private void PAPEL_DE_PAREDEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PAPEL_DE_PAREDEMouseClicked
         // TODO add your handling code here:
         
+        ////////////////////////////////////////////////////////////////////////
+        /*SE NENHUM BOTAO ESTIVER HABILITADO*/
+        if((BTN1.isSelected() && BTN2.isSelected() && BTN3.isSelected() && BTN4.isSelected() && BTN5.isSelected()) ||
+          (!BTN1.isEnabled() && !BTN2.isEnabled() && !BTN3.isEnabled() && !BTN4.isEnabled() && !BTN5.isEnabled())){
+            JOptionPane.showMessageDialog(null,"Habilite pelo menos um Técnico.","Aviso",JOptionPane.WARNING_MESSAGE);
+        }////////////////////////////////////////////////////////////////////////
+        else{
+            
+        int tentativas = 1;
+        
         if(solicitar_senha == true){
+        
+        do{
             
         JPasswordField jpf = new JPasswordField();
+            
+        JOptionPane.showConfirmDialog(null,new Object[]{ jpf}, tentativas+"ª Tentativa, Digite a senha :",JOptionPane.OK_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE);
         
-        JOptionPane.showConfirmDialog(null,new Object[]{ jpf}, "Senha:",JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
+        senha_digitada = new String(jpf.getPassword());
         
-        String senha = new String(jpf.getPassword());
-        
-        if(senha.equals("19216811")){
+        if(senha_digitada.equals(senha_de_chamada)){
             funcao_principal();
-        }else{
-            JOptionPane.showMessageDialog(null,"Senha incorreta ...","Warning",JOptionPane.WARNING_MESSAGE);
+        }else
+        if(!senha_digitada.equals(senha_de_chamada) && !senha_digitada.equals("")){
+            JOptionPane.showMessageDialog(null,"Senha incorreta.","                                    "+
+                     "Warning",JOptionPane.WARNING_MESSAGE);
+            tentativas++;
+        }else
+        if(senha_digitada.equals("")){
+            JOptionPane.showMessageDialog(null,"Digite algo ....","                                    "+
+                     "Warning",JOptionPane.WARNING_MESSAGE);
+            tentativas++;
         }
+        }while(!senha_digitada.equals(senha_de_chamada));
             
         }else{
             funcao_principal();
+        }
+            
         }
         
     }//GEN-LAST:event_PAPEL_DE_PAREDEMouseClicked
